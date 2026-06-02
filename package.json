@@ -1,0 +1,17 @@
+{
+  "name": "node-pnpm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:ui": "pnpm --filter ui dev",
+    "start:api": "pnpm --filter api start:dev",
+    "start": "pnpm run start:ui & pnpm run start:api",
+    "build": "pnpm recursive run build",
+    "test": "pnpm recursive run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.1"
+}

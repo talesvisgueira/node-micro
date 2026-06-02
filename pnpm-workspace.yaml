@@ -1,0 +1,8 @@
+packages:
+ - 'libs/*'
+ - 'apps/*'
+
+catalog:
+  '@my-org/*': 'libs/*'
+
+injectWorkspacePackages: true

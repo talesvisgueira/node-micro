@@ -13,6 +13,16 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+apps/**/dist
+apps/**/node_modules
+apps/**/build
+apps/**/tmp
+
+libs/**/dist
+libs/**/node_modules
+libs/**/build
+libs/**/tmp
+
 # dotenv environment variable files
 .env
 .env.development

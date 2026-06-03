@@ -4,14 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:ui": "pnpm --filter ui dev",
-    "start:api": "pnpm --filter api start:dev",
-    "start": "pnpm run start:ui & pnpm run start:api",
+    "start:gateway": "pnpm --filter gateway start",
+    "start:users": "pnpm --filter users start",
+    "start:payments": "pnpm --filter payments start",
+    "start:products": "pnpm --filter products start",
+    "start:checkouts": "pnpm --filter checkouts start",
+    "start": "pnpm run start:gateway & pnpm run start:users & pnpm run start:payments & pnpm run start:products & pnpm run start:checkouts",
     "build": "pnpm recursive run build",
     "test": "pnpm recursive run test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.33.1"
+  "packageManager": "pnpm@10.33.1",
+  "dependencies": {
+    "@myorg/logger": "link:libs/logger",
+    "glob": "^13.0.6"
+  }
 }

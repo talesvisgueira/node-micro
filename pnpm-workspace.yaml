@@ -1,8 +1,10 @@
 packages:
- - 'libs/*'
- - 'apps/*'
+  - 'libs/*'
+  - 'apps/*'
+allowBuilds:
+  sharp: true
 
 catalog:
-  '@my-org/*': 'libs/*'
+  '@myorg/logger': 'libs/logger'
 
 injectWorkspacePackages: true

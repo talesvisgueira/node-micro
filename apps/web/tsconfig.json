@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@myorg/logger": ["./node_modules/@myorg/logger/src/index"],
     }
   },
   "include": [

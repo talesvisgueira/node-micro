@@ -1,9 +1,9 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import helmet from 'helmet';
-import { ValidationPipe } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-
+import MyLogger from '@myorg/logger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -36,8 +36,8 @@ async function bootstrap() {
 
   await app.listen(port);
 
-  console.log(`API Gateway ruuning on port ${port}`);
-  console.log(`Swagger documentation: http://localhost:${port}/api`);
+  MyLogger(`API Gateway ruuning on port ${port}`);
+  MyLogger(`Swagger documentation: http://localhost:${port}/api`);
 }
 
 bootstrap();

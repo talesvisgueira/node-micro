@@ -9,7 +9,8 @@
     "start:payments": "pnpm --filter payments start",
     "start:products": "pnpm --filter products start",
     "start:checkouts": "pnpm --filter checkouts start",
-    "start": "pnpm run start:gateway & pnpm run start:users & pnpm run start:payments & pnpm run start:products & pnpm run start:checkouts",
+    "start:web": "pnpm --filter web start",
+    "start": "pnpm run start:web & pnpm run start:gateway & pnpm run start:users & pnpm run start:payments & pnpm run start:products & pnpm run start:checkouts",
     "build": "pnpm recursive run build",
     "test": "pnpm recursive run test"
   },
@@ -19,6 +20,10 @@
   "packageManager": "pnpm@10.33.1",
   "dependencies": {
     "@myorg/logger": "link:libs/logger",
-    "glob": "^13.0.6"
+    "glob": "^13.0.6",
+    "logger": "link:../../libs/logger"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
   }
 }

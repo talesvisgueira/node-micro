@@ -1,6 +1,6 @@
 import {  Module, NestModule } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController } from './health/health.controller';
+import { AppService } from './health/health.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ProxyModule } from './proxy/proxy.module';

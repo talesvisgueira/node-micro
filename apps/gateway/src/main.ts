@@ -62,9 +62,28 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Markatplace API Gateway')
-    .setDescription('API Gateway for Markatplace microservice')
-    .setVersion('1.0')
+    .setDescription(`
+      API Gateway for Markatplace microservice
+      
+      Serviços disponíveis:
+      - Users Services**: Autenticação e gestão de usuários.
+      - Products Services: Catálogo de produtos.
+      - Checkout Services: Carrinho e processamento de pedidos.
+      - Payments Services: Processamento de paamentos.
+      
+      Autenticação:
+      - Use JWT Bearer token para rotas protegidas.
+      - Use Session token para validação de sessão.`)
+    .setVersion('1.0,0')
+    .setContact('Organização','<https://organizacao.com>','dev@organizacao.com')
+    .setLicense('MIT','<https://organicacao.com/licenca>')
     .addBearerAuth()
+    .addTag('Authentication','Autenticação e autorização dos usuários')
+    .addTag('Users','Gestão dos usuários')
+    .addTag('Products','Gestão dos usuários')
+    .addTag('Checkouts','Carrinho de pedidos')
+    .addTag('Payments','Processamento dos pagamentos')
+    .addTag('Health','Monitoramentos da aplicação')
     .build();
 
   const document = SwaggerModule.createDocument(app,config);

@@ -1,8 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
-import { ProxyService } from './proxy/proxy.service';
+import { AppService } from './health.service';
+import { ProxyService } from '../proxy/proxy.service';
+import { ApiTags } from '@nestjs/swagger';
 
-@Controller()
+@ApiTags('Health')
+@Controller('health')
 export class AppController {
 
   constructor(private readonly appService: AppService,

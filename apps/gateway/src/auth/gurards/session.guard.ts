@@ -1,7 +1,7 @@
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { AuthService } from './auth.service';
-import { serviceConfig } from '../config/gateway.config';
+import { AuthService } from '../auth.service';
+import { serviceConfig } from '../../config/gateway.config';
 
 @Injectable()
 export class SessionGuard implements CanActivate {

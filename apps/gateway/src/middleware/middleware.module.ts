@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { LoggingMiddleware } from './logging/logging.middleware';
+import { LoggingMiddleware } from './logging.middleware';
 import { ThrottlerModule } from '@nestjs/throttler';
 
 @Module({

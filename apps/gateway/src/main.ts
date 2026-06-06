@@ -64,17 +64,17 @@ async function bootstrap() {
     .setTitle('Markatplace API Gateway')
     .setDescription(`
       API Gateway for Markatplace microservice
-      
+
       Serviços disponíveis:
       - Users Services**: Autenticação e gestão de usuários.
       - Products Services: Catálogo de produtos.
       - Checkout Services: Carrinho e processamento de pedidos.
       - Payments Services: Processamento de paamentos.
-      
+
       Autenticação:
       - Use JWT Bearer token para rotas protegidas.
       - Use Session token para validação de sessão.`)
-    .setVersion('1.0,0')
+    .setVersion('1.0.0')
     .setContact('Organização','<https://organizacao.com>','dev@organizacao.com')
     .setLicense('MIT','<https://organicacao.com/licenca>')
     .addBearerAuth()
@@ -87,7 +87,14 @@ async function bootstrap() {
     .build();
 
   const document = SwaggerModule.createDocument(app,config);
-  SwaggerModule.setup('',app,document);
+  SwaggerModule.setup('',app,document, {
+    swaggerOptions: {},
+    customSiteTitle: 'Markatplace',
+    customfavIcon: 'favicon.ico',
+    customCss:
+      `.swagger-ui .topbar {display: yes},
+      .swagger-ui .info .title {color: #fb82f6;}`
+  });
 
   await app.listen(port);
 

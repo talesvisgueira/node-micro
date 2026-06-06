@@ -1,22 +1,23 @@
 import { Injectable, NestMiddleware, Logger } from '@nestjs/common';
+import { Request, Response } from 'express'
 
 @Injectable()
 export class LoggingMiddleware implements NestMiddleware {
 
-  use(req: any, res: any, next: () => void) {
-      const { method, originalUrl } = req;
+  use(req: Request, res: Response, next: () => void) {
+      const { method, originalUrl, ip } = req;
       const userAgent = req.get('user-agent') || '';
-      const ip = req.ip || req.connection.remoteAddress;
+      const startTime = Date.now();
 
       Logger.log(
         `Request: ${method} ${originalUrl} - User Agent: ${userAgent} - IP: ${ip}`,
         'LoggingMiddleware',
       );
 
-      res.on('error', (err: any) => {
+      res.on('error', (error) => {
       Logger.error(
         `Error Response: ${method} ${originalUrl} - User Agent: ${userAgent} -
-        IP: ${ip} - Error: ${err.message}`, 'LoggingMiddleware',
+        IP: ${ip} - Error: ${error.message}`, 'LoggingMiddleware',
       );
       });
 
@@ -24,7 +25,7 @@ export class LoggingMiddleware implements NestMiddleware {
         const { method, originalUrl } = req;
         const statusCode = res.statusCode;
         const contentLength = res.get('content-length') || 0;
-        const duration = Date.now() - req.startTime;
+        const duration = Date.now() - startTime;
         Logger.log( `Response: ${method} ${originalUrl} - Status: ${statusCode} -
                   Content Length: ${contentLength} - Duration: ${duration}ms`,
                   'LoggingMiddleware',

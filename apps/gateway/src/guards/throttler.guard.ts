@@ -14,7 +14,7 @@ export class CustomThrottlerGuard extends ThrottlerGuard  {
 
     const { context, limit, ttl } = requestProps;
     const { req, res } = this.getRequestResponse(context);
-    
+
     const throttlers = this.reflector.get('throttler',context.getHandler());
     const throttlerName = throttlers ? Object.keys(throttlers)[0]:'default';
     const tracker = await this.getTracker(req);

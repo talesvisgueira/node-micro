@@ -1,14 +1,14 @@
-import { Injectable,Logger, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { Injectable,Logger, OnModuleDestroy, OnModuleInit, Unlock } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as amqp from 'amqplib';
 
 
 @Injectable()
-export class RabbitmqService implements OnModuleInit, OnModuleDestroy {
+export class EventMessageService implements OnModuleInit, OnModuleDestroy {
 
-    private readonly logger = new Logger(RabbitmqService.name);
-    private connection: amqp.ChannelModel;
-    private channel: amqp.Channel;
+    private readonly logger = new Logger(EventMessageService.name);
+    private connection: amqp.ChannelModel ;
+    private channel: amqp.Channel ;
 
     constructor(private readonly configService: ConfigService){}
 
@@ -27,7 +27,7 @@ export class RabbitmqService implements OnModuleInit, OnModuleDestroy {
                                 'amqp://',)
             this.connection = await amqp.connect(rabbitmqUrl);
             this.channel = await this.connection.createChannel();
-            this.logger.log(`Connected to RabbitMQ sucessfully.`);
+            this.logger.log(`Sucesso na conecção com RabbitMQ.`);
 
             this.channel.on('error',(err) =>{
                 this.logger.log(`Connected to RabbitMQ error.`);
@@ -66,7 +66,7 @@ export class RabbitmqService implements OnModuleInit, OnModuleDestroy {
         }
     }
 
-    async publisMessage(exchange: string, routingKey: string, message: any) {
+    async publishMessage(exchange: string, routingKey: string, message: any) {
         try {
             if (!this.channel) {
                 this.logger.warn('RabbitMQ channel not available.');
@@ -104,13 +104,20 @@ export class RabbitmqService implements OnModuleInit, OnModuleDestroy {
                 await this.channel.prefetch(1);
                 await this.channel.consume(queue.queue,async (msg) => {
                     if (msg) {
-                        const message = JSON.parse(msg.content.toString());
-                        this.logger.log(`Message received from queue: ${queueName}`  );
-                        this.logger.log(`Message content: ${JSON.stringify(message)}`  );
-                        await callback(message);
-                        this.channel.ack(msg);
+                        try{
+                            const message = JSON.parse(msg.content.toString());
+                            this.logger.log(`Message received from queue: ${queueName}`  );
+                            this.logger.log(`Message content: ${JSON.stringify(message)}`  );
+                            await callback(message);
+                            this.channel.ack(msg);
+                            this.logger.log('Message processed success from queue.');
+                        }catch(error) {
+                            this.logger.error('Error processing message to Queue.', error);
+                            this.channel.nack(msg,false,false);
+                        }
                     }
-                })
+                });
+                this.logger.log(`Subscribed to queue: ${queueName} with routing key: ${routingKey}`);
             } catch(error) {
                 this.logger.error('Error subscribing message to RabbitMQ.', error);
             }

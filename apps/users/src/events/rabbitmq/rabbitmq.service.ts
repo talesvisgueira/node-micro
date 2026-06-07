@@ -87,4 +87,33 @@ export class RabbitmqService implements OnModuleInit, OnModuleDestroy {
         }
     }
 
+    async subscribeToQueue (
+        queueName: string,
+        exchange: string,
+        routingKey: string,
+        callback: (message: any) => Promise<void>,) {
+            try {
+                await this.channel.assertExchange(exchange, 'topic',{durable: true});
+                const queue = await this.channel.assertQueue(queueName, {durable: true,
+                    arguments: {
+                        'x-message-ttl':86400000,
+                        'x-max-length': 10000,
+                    }
+                });
+                await this.channel.bindQueue(queue.queue,exchange,routingKey);
+                await this.channel.prefetch(1);
+                await this.channel.consume(queue.queue,async (msg) => {
+                    if (msg) {
+                        const message = JSON.parse(msg.content.toString());
+                        this.logger.log(`Message received from queue: ${queueName}`  );
+                        this.logger.log(`Message content: ${JSON.stringify(message)}`  );
+                        await callback(message);
+                        this.channel.ack(msg);
+                    }
+                })
+            } catch(error) {
+                this.logger.error('Error subscribing message to RabbitMQ.', error);
+            }
+        }
+
 }

@@ -9,8 +9,9 @@
     "start:payments": "pnpm --filter payments start",
     "start:products": "pnpm --filter products start",
     "start:checkouts": "pnpm --filter checkouts start",
+    "start:loggers": "pnpm --filter loggers start",
     "start:web": "pnpm --filter web start",
-    "start": "pnpm run start:web & pnpm run start:gateway & pnpm run start:users & pnpm run start:payments & pnpm run start:products & pnpm run start:checkouts",
+    "start": "pnpm run start:web & pnpm run start:gateway & pnpm run start:users & pnpm run start:payments & pnpm run start:products & pnpm run start:checkouts & pnpm run start:loggers",
     "build": "pnpm recursive run build",
     "test": "pnpm recursive run test"
   },

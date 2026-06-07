@@ -1,31 +1,15 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './health.service';
-import { ProxyService } from '../proxy/proxy.service';
+import { HealthService } from './health.service';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Health')
 @Controller('health')
-export class AppController {
+export class HealthController {
 
-  constructor(private readonly appService: AppService,
-              private readonly proxyService: ProxyService) {}
-
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
+  constructor(private readonly healthService: HealthService) {}
 
   @Get("/health")
   async getHealth() {
-    return {
-      status: 'ok',
-      timestamp: new Date().toISOString(),
-      services: {
-        users: await this.proxyService.getServiceHealth('users'),
-        products: await this.proxyService.getServiceHealth('products'),
-        checkout: await this.proxyService.getServiceHealth('checkouts'),
-        payments: await this.proxyService.getServiceHealth('payments'),
-      },
-    }
+    return this.healthService.getHealth();
   }
 }

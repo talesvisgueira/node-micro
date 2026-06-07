@@ -1,6 +1,6 @@
 import {  Module, NestModule } from '@nestjs/common';
-import { AppController } from './health/health.controller';
-import { AppService } from './health/health.service';
+import { HealthController } from './health/health.controller';
+import { HealthService } from './health/health.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ProxyModule } from './proxy/proxy.module';
@@ -37,9 +37,9 @@ import { CustomThrottlerGuard } from './guards/throttler.guard';
     MiddlewareModule,
     AuthModule,
   ],
-  controllers: [AppController],
+  controllers: [HealthController],
   providers: [
-    AppService,
+    HealthService,
     {
       provide: APP_GUARD,
       useClass: CustomThrottlerGuard,

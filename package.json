@@ -12,6 +12,7 @@
     "start:loggers": "pnpm --filter loggers start",
     "start:web": "pnpm --filter web start",
     "start": "pnpm run start:web & pnpm run start:gateway & pnpm run start:users & pnpm run start:payments & pnpm run start:products & pnpm run start:checkouts & pnpm run start:loggers",
+    "start:dev": "pnpm pnpm run start:gateway & pnpm run start:users ",
     "build": "pnpm recursive run build",
     "test": "pnpm recursive run test"
   },

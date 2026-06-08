@@ -72,8 +72,10 @@ export class EventMessageService implements OnModuleInit, OnModuleDestroy {
                 this.logger.warn('RabbitMQ channel not available.');
                 return;
             }
-            await this.channel.assertExchange(exchange, '',{durable: true});
+            this.logger.log(`Preparing from sending message to RabbitMQ.`);
+            await this.channel.assertExchange(exchange, 'direct',{durable: true});
             const messageBuffer = Buffer.from(JSON.stringify(message));
+            this.logger.log(`Sending message to RabbitMQ: EXCHANGE: ${exchange} - ROUTINGKEY: ${routingKey}.`);
             const published = this.channel.publish(exchange,
                                                     routingKey,
                                                     messageBuffer,

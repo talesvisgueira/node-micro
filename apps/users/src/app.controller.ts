@@ -20,10 +20,7 @@ export class AppController {
 
   @Post("/login")
   async login(@Body() body) {
-    return {
-      status: 'login ok',
-      timestamp: new Date().toISOString(),
-    }
+    return this.appService.login(body);
   }
 
   @Post("/register")

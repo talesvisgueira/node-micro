@@ -2,7 +2,7 @@ version: '3.0'
 
 services:
   rabbitmq:
-    image: rabbitmq
+    image: rabbitmq:4-management
     container_name: event-message
     environment:
       RABBITMQ_DEFAULT_USER: admin

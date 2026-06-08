@@ -5,9 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { EventMessageModule } from '@myorg/eventer/dist/src/event.module'
 
 @Module({
-  imports: [ConfigModule.forRoot({
-      isGlobal: true,
-    }), EventMessageModule,],
+  imports: [ConfigModule, EventMessageModule,],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -73,7 +73,7 @@ export class EventMessageService implements OnModuleInit, OnModuleDestroy {
                 return;
             }
             this.logger.log(`Preparing from sending message to RabbitMQ.`);
-            await this.channel.assertExchange(exchange, 'direct',{durable: true});
+            await this.channel.assertExchange(exchange, 'topic',{durable: true});
             const messageBuffer = Buffer.from(JSON.stringify(message));
             this.logger.log(`Sending message to RabbitMQ: EXCHANGE: ${exchange} - ROUTINGKEY: ${routingKey}.`);
             const published = this.channel.publish(exchange,
@@ -98,8 +98,8 @@ export class EventMessageService implements OnModuleInit, OnModuleDestroy {
                 await this.channel.assertExchange(exchange, 'topic',{durable: true});
                 const queue = await this.channel.assertQueue(queueName, {durable: true,
                     arguments: {
-                        'x-message-ttl':86400000,
-                        'x-max-length': 10000,
+                        // 'x-message-ttl':86400,
+                        // 'x-max-length': 10000,
                     }
                 });
                 await this.channel.bindQueue(queue.queue,exchange,routingKey);

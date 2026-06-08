@@ -8,6 +8,5 @@ async function bootstrap() {
   await app.listen(port);
 
   MyLogger(`API DBLogger ruuning on port ${port}`);
-  MyLogger(`Swagger documentation: http://localhost:${port}/api`);
 }
 bootstrap();

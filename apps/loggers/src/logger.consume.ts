@@ -34,7 +34,10 @@ export class LoggerConsumerService {
     private  processLoggerQueue(message: any): void {
         try {
             this.logger.log('Proccessing message from queue');
-            this.logger.log(`Message: ${message}`);
+
+            const payload: string = JSON.stringify(message);
+            this.logger.log(`Message: ${payload}`);
+
             this.logger.log('Message proccessed.');
         } catch(error) {
             this.logger.error('Failed processing message', error);

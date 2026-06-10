@@ -7,9 +7,11 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { databaseConfig } from './config/database.config';
 import { LoggerQueueService } from './logger.service';
 import { LoggerConsumerService } from './logger.consume';
+import { MetricsModule } from './metrics/metrics.module';
 
 @Module({
   imports: [ConfigModule,
+    MetricsModule,
     TypeOrmModule.forRoot(databaseConfig),
     EventMessageModule,],
   controllers: [AppController],

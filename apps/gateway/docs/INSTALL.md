@@ -6,6 +6,7 @@ pnpm i @nestj/config @nestj/throttler @nestj/swagger helmet
 pnpm i class-validator class-transformer
 pnpm i @nestjs/axios axios
 pnpm i @nestjs/jwt @nestjs/passport passport passport-jwt
+pnpm i prom-client
 
 pnpm i -D vitest supertest @types/supertest
 pnpm i -D @vitest/coverage-v8 @vitest/ui

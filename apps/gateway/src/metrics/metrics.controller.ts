@@ -10,7 +10,7 @@ export class MetricsController {
   @Public()
   @Get()
   async getHealth() {
-     this.metricsService.getMetrics();
+    this.metricsService.getMetrics();
   }
 
 }

@@ -3,7 +3,11 @@ packages:
   - 'apps/*'
 allowBuilds:
   '@nestjs/core': true
+  '@parcel/watcher': false
   '@scarf/scarf': false
+  esbuild: true
+  lmdb: false
+  msgpackr-extract: false
   sharp: true
   unrs-resolver: false
 

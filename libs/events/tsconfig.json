@@ -23,6 +23,5 @@
     "noFallthroughCasesInSwitch": false,
     "strictPropertyInitialization": false
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "tests"]
+  "include": ["src/**/*", "dist/event.interface.js", "dist/event.module.js", "dist/event.service.js"]
 }

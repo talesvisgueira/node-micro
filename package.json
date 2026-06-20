@@ -11,16 +11,17 @@
     "start:checkouts": "pnpm --filter checkouts start",
     "start:loggers": "pnpm --filter loggers start",
     "start:web": "pnpm --filter web start",
-    "start": "pnpm run start:web & pnpm run start:gateway & pnpm run start:users & pnpm run start:payments & pnpm run start:products & pnpm run start:checkouts & pnpm run start:loggers",
+    "start:filial": "pnpm --filter filial start",
+    "start": "pnpm run start:gateway & pnpm run start:users & pnpm run start:payments & pnpm run start:products & pnpm run start:checkouts & pnpm run start:loggers & pnpm run start:web & pnpm run start:filial ",
     "start:dev": "pnpm pnpm run start:gateway & pnpm run start:users & pnpm run start:loggers",
+    "stop": "ps aux | grep -i node | awk '{print $2}' | xargs  kill -9",
     "build": "pnpm recursive run build",
     "test": "pnpm recursive run test"
-
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@11.6.0",
+  "packageManager": "pnpm@11.8.0",
   "dependencies": {
     "@myorg/events": "link:libs/events",
     "@nestjs/mapped-types": "^2.1.1",

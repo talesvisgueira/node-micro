@@ -2,7 +2,7 @@ import { describe } from "node:test";
 import { beforeAll, expect, it  } from "vitest";
 
 
-describe('Testes processamento da mensagem...', () => {
+describe('Testes do microserviço CHECKOUT...', () => {
     // beforeAll( async ()=> {
 
     // });

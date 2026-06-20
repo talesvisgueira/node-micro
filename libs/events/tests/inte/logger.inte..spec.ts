@@ -1,7 +1,7 @@
 import { describe } from "node:test";
 import { beforeAll, expect, it  } from "vitest";
 
-describe('Testes de integração do usuário...', () => {
+describe('Testes de integração da lib EVENTS...', () => {
     // beforeAll( async ()=> {
 
     // });

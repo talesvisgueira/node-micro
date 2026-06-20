@@ -1,13 +1,13 @@
 import { describe } from "node:test";
 import { beforeAll, expect, it  } from "vitest";
 
-describe('Testes de integração do usuário...', () => {
+describe('Testes de integração do GATEWAY...', () => {
     // beforeAll( async ()=> {
 
     // });
 
 
-    it('Não deve cadastrar usuário com email existente...', async () => {
+    it('Não deve acessar tela inicial...', async () => {
         // const repository = new UserMemoryRepository();
         // const userServece : UserRegisterUseCase = new UserRegisterUseCase(repository);
 
@@ -17,7 +17,7 @@ describe('Testes de integração do usuário...', () => {
 
     });
 
-    it('Deve cadastrar novo usuário...', async () => {
+    it('Deve acessar tela inicial...', async () => {
         // const repository = new UserMemoryRepository();
         // const userServece : UserRegisterUseCase = new UserRegisterUseCase(repository);
 

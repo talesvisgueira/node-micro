@@ -20,7 +20,6 @@
     "test:cov": "vitest --coverage"
   },
   "dependencies": {
-    "@myorg/logger": "link:../../libs/logger",
     "@nestjs/axios": "^4.0.1",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.4",

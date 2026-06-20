@@ -48,3 +48,4 @@ scrape_configs:
         labels:
           service: logger-service
 
+

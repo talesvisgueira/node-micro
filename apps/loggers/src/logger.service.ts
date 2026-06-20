@@ -1,6 +1,5 @@
-
+import { EventMessageService } from '@myorg/events/dist/event.service';
 import { Injectable, Logger } from '@nestjs/common';
-import { EventMessageService } from '@myorg/eventer/dist/src/event.service'
 
 @Injectable()
 export class LoggerQueueService {

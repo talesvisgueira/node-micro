@@ -1,6 +1,6 @@
 import { Injectable, Logger, } from '@nestjs/common';
 // import { LoginDto } from '../../gateway/src/auth/dtos/login.dto';
-import { EventMessageService } from '@myorg/eventer/dist/src/event.service';
+import { EventMessageService } from '@myorg/events/dist/event.service';
 
 @Injectable()
 export class AppService {
@@ -21,7 +21,7 @@ export class AppService {
       await this.eventMessageService.publishMessage(
         this.EXCHANGE,
         this.ROUTING_KEY,
-        loginDto
+        {origem:'users', mensagem: loginDto}
       );
       this.logger.log('Message sending success from queue.');
       return {

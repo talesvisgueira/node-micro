@@ -2,14 +2,14 @@ version: '3.0'
 
 services:
   logger-db:
-    image: postgres
+    image: postgres:17
     container_name: logger-db
     environment:
       POSTGRES_DB: logger_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5305:5432"
+      - 5305:5432
     volumes:
       - logger_db_data:/var/lib/postgresql/data
     restart: unless-stopped

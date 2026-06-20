@@ -1,13 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import MyLogger from '@myorg/logger';
+import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const logger = new Logger("MS-Payments");
   const port = process.env.PORT ?? 3004;
   await app.listen(port);
 
-  MyLogger(`API Payments ruuning on port ${port}`);
+  logger.warn(`Microserviço 'Payments' ativo na porta: ${port}`);
 
 }
 bootstrap();

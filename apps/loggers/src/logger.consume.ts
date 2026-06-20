@@ -1,6 +1,10 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
-import { EventMessageService } from '@myorg/eventer/dist/src/event.service'
+import { EventMessageService } from '@myorg/events/dist/event.service'
 import { LoggerQueueService } from './logger.service';
+import { CreateAuditDto } from './audit/dto/create-audit.dto';
+import { AuditService } from './audit/audit.service';
+import { Audit } from './entities/audit.entity';
+
 
 @Injectable()
 export class LoggerConsumerService {
@@ -10,7 +14,9 @@ export class LoggerConsumerService {
     private readonly ROUTING_KEY = 'logger-message';
     private readonly QUEUE_NAME = 'logger-queue';
 
-    constructor(private readonly loggerQueueService: LoggerQueueService) {}
+    constructor(private readonly loggerQueueService: LoggerQueueService,
+        private readonly auditService: AuditService
+    ) {}
 
     async onModuleInit() {
 
@@ -31,14 +37,21 @@ export class LoggerConsumerService {
         }
     }
 
-    private  processLoggerQueue(message: any): void {
+    private async processLoggerQueue(message: any): Promise<void> {
         try {
             this.logger.log('Proccessing message from queue');
 
             const payload: string = JSON.stringify(message);
-            this.logger.log(`Message: ${payload}`);
+            this.logger.log(`Payload: ${message}`);
+            const {origem,mensagem} =  message  ;
+            this.logger.log(`Origem: ${origem} - Message: ${mensagem}`);
+           
+            let dto: CreateAuditDto = new CreateAuditDto();
+            dto.origem = origem;
+            dto.mensagem = mensagem;
+            await this.auditService.create(dto);
 
-            this.logger.log('Message proccessed.');
+            this.logger.log(`Message proccessed.`);
         } catch(error) {
             this.logger.error('Failed processing message', error);
             throw error;

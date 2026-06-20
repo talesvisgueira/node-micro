@@ -1,15 +1,14 @@
-version: '3.0'
 
 services:
   user-db:
-    image: postgres
+    image: postgres:17
     container_name: user-db
     environment:
       POSTGRES_DB: user_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5301:5432"
+      - 5301:5432
     volumes:
       - user_db_data:/var/lib/postgresql/data
     restart: unless-stopped

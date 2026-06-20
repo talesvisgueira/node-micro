@@ -2,12 +2,12 @@ import { describe } from "node:test";
 import { beforeAll, expect, it  } from "vitest";
 
 
-describe('Testes processamento da mensagem...', () => {
+describe('Testes do microserviço PAYMENTS...', () => {
     // beforeAll( async ()=> {
 
     // });
 
-     it('Deve verificar se mensagem está correga...', async () => {
+     it('Deve verificar a tela inicial...', async () => {
         const response = 1 ;
         expect(response).toBe(1);
         expect(response > 0);

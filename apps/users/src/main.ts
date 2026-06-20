@@ -1,10 +1,16 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import MyLogger from '@myorg/logger';
-import { ValidationPipe } from '@nestjs/common';
+// import MyLogger from '@myorg/logger';
+import { Logger, ValidationPipe } from '@nestjs/common';
+import {AppDataSource} from "./config/datasource.js"
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const logger = new Logger("MS-Users");
+
+  const port = process.env.PORT ?? 3001;
+  const db_porta = process.env.DB_PORT ?? 3501;
+  const database = process.env.DB_DATABASE ?? 'postgres';
 
   app.enableCors();
 
@@ -14,10 +20,14 @@ async function bootstrap() {
       transform: true,
     }),
   )
-  const port = process.env.PORT ?? 3001;
+
+  logger.warn(`Inicializando banco de dados...` );
+  await AppDataSource.initialize();
+  logger.warn(`Banco de dados: ${database} inicializado na porta ${db_porta}` );
+
   await app.listen(port);
 
-  MyLogger(`API Users ruuning on port ${port}`);
+  logger.warn(`Microserviço 'Products' ativo na porta: ${port}`);
 
 }
 bootstrap();

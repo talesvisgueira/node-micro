@@ -3,7 +3,7 @@ import { beforeAll, expect, it } from 'vitest';
 import  request  from 'supertest';
 import { describe } from 'node:test';
 
-describe('Testes da tela HOME...', () => {
+describe('Testes e2e da tela HOME do CHECKOUTS...', () => {
     // beforeAll( async ()=> {
     //     await app.ready();
     // });

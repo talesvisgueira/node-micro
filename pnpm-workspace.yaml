@@ -2,9 +2,12 @@ packages:
   - 'libs/*'
   - 'apps/*'
 allowBuilds:
+  '@nestjs/core': true
+  '@scarf/scarf': false
   sharp: true
+  unrs-resolver: false
 
 catalog:
-  '@myorg/logger': 'libs/logger'
+  '@myorg/events': 'libs/events'
 
 injectWorkspacePackages: true

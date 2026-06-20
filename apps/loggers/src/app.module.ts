@@ -1,23 +1,25 @@
+
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ConfigModule } from '@nestjs/config';
-import { EventMessageModule } from '@myorg/eventer/dist/src/event.module'
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { databaseConfig } from './config/database.config';
 import { LoggerQueueService } from './logger.service';
 import { LoggerConsumerService } from './logger.consume';
 import { MetricsModule } from './metrics/metrics.module';
+import { AuditModule } from './audit/audit.module';
+import { AuditService } from './audit/audit.service';
+import { AuditController } from './audit/audit.controller';
 
+import { EventMessageModule } from '@myorg/events/dist/event.module';
 @Module({
-  imports: [ConfigModule,
+  imports: [
+    AuditModule,
     MetricsModule,
-    TypeOrmModule.forRoot(databaseConfig),
     EventMessageModule,],
-  controllers: [AppController],
+  controllers: [AppController, AuditController],
   providers: [AppService,
     LoggerConsumerService,
-    LoggerQueueService
+    LoggerQueueService,
+    AuditService
   ],
 })
 export class AppModule {}

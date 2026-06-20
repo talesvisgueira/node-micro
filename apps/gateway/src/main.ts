@@ -3,11 +3,12 @@ import { AppModule } from './app.module';
 import helmet from 'helmet';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import MyLogger from '@myorg/logger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const port = process.env.PORT ?? 3000;
+
+  const logger = new Logger("APIGateway");
 
   app.use(helmet({
     contentSecurityPolicy: {
@@ -98,8 +99,8 @@ async function bootstrap() {
 
   await app.listen(port);
 
-  MyLogger(`API Gateway ruuning on port ${port}`);
-  MyLogger(`Swagger documentation: http://localhost:${port}/api`);
+  logger.warn(`API Gateway ruuning on port ${port}`);
+  logger.warn(`Swagger documentation: http://localhost:${port}/api`);
 }
 
 bootstrap();

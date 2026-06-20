@@ -15,16 +15,17 @@
     "start:dev": "pnpm pnpm run start:gateway & pnpm run start:users & pnpm run start:loggers",
     "build": "pnpm recursive run build",
     "test": "pnpm recursive run test"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.33.1",
+  "packageManager": "pnpm@11.6.0",
   "dependencies": {
-    "@myorg/eventer": "link:libs/events",
-    "@myorg/logger": "link:libs/logger",
+    "@myorg/events": "link:libs/events",
+    "@nestjs/mapped-types": "^2.1.1",
     "glob": "^13.0.6",
-    "logger": "link:../../libs/logger"
+    "vitest": "^4.1.8"
   },
   "devDependencies": {
     "typescript": "^6.0.3"

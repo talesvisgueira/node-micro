@@ -23,6 +23,7 @@
   "license": "ISC",
   "packageManager": "pnpm@11.8.0",
   "dependencies": {
+    "@myorg/core": "link:libs/core",
     "@myorg/events": "link:libs/events",
     "@nestjs/mapped-types": "^2.1.1",
     "glob": "^13.0.6",

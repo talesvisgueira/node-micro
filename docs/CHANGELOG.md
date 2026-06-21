@@ -13,7 +13,7 @@
 * **organizations:** Módulo de gereniamento da organização e pessoal.
 
 
-## [1.0.0](https://github.com/anthropics/anthropic-sdk-typescript/compare/v0.5.3...v0.5.4) (2023-07-11)
+## [1.0.0](https://github.com/anthropics/anthropic-sdk-typescript/compare/v0.5.3...v0.5.4) (2027-07-01)
 
 
 ### Features

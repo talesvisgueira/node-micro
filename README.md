@@ -27,6 +27,7 @@ Este projeto está licenciado sobre a licença MIT. Veja em [LICENSE](./docs/LIC
     - [INSTALAÇÃO](#instalação)
     - [INICIALIZAR](#inicializar)
   - [DEPENDÊNCIA](#dependência)
+  - [MÓDULOS DO SISTEMA](#módulos-do-sistema)
   - [CONTRIBUIÇÕES](#contribuições)
 
 
@@ -58,6 +59,22 @@ pnpm start
 ## DEPENDÊNCIA
 
 Node.js 24.17.0+
+
+## MÓDULOS DO SISTEMA
+
+| MÓDULO | FINALIDADE| TIPO | LINK |
+|---|---|---|---|
+| API Gateway | Porta de entrada do sistema | Backend | [Detalhe](apps/gateway/README.md)  |
+| Organizations | Microserviço de gerenciamento das organizações | Backend | [Detalhe](apps/organizations/README.md)  |
+| Users | Microserviço de gerenciamento dos usuários | Backend | [Detalhe](apps/users/README.md)  |
+| Projects | Microserviço de gerenciamento dos projetos | Backend | [Detalhe](apps/projects/README.md)  |
+| Financial | Microserviço de gerenciamento financeiro | Backend | [Detalhe](apps/financial/README.md)  |
+| Stock | Microserviço de gerenciamento do estoque de produtos | Backend | [Detalhe](apps/stocks/README.md)  |
+| Checkout | Microserviço de carrinho de compra | Backend | [Detalhe](apps/checkouts/README.md)  |
+| Logger | Microserviço para registro dos logs | Backend | [Detalhe](apps/logger/README.md)  |
+| Manager | Aplicação de gerenciamento do gestor | Frontend | [Detalhe](apps/gestor/README.md)  |
+| Customer | Aplicação das empresas clientes | Frontend | [Detalhe](apps/filial/README.md)  |
+| Worker | Aplicação para uso pelos funcionários | Frontend | [Detalhe](apps/worker/README.md)  |
 
 ## CONTRIBUIÇÕES
 

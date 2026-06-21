@@ -47,16 +47,18 @@ Mais informações no link **[openALM.com](https://openalm.com)**.
 
 ## DEPENDÊNCIAS
 
-Node.js: v24.17.0
-Pnpm: v11.8.0
-Typescript: v6.0.2
-Vitest: v4.1.8
-Nestjs: v11.0.1
-Angular: v22.0.2
-Amqplib: v2.0.1
-PostgreSql: v17
-Prometheus: v3.12.0
-Grafana: v13.0.2
+- Node.js: v24.17.0
+- Pnpm: v11.8.0
+- Typescript: v6.0.2
+- Vitest: v4.1.8
+- Nestjs: v11.0.1
+- Angular: v22.0.2
+- React: 19.2.4
+- Nextjs: 19.2.6
+- Amqplib: v2.0.1
+- PostgreSql: v17
+- Prometheus: v3.12.0
+- Grafana: v13.0.2
 
 ### INSTALAÇÃO
 

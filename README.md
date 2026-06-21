@@ -1,10 +1,10 @@
-# <img src=".github/logo.svg" alt="" width="32"> Sistema de gerenciamento do ciclo de vida de software
+# <img src=".github/logo.svg" alt="" width="32"> Sistema para gerenciamento do ciclo de vida de software
 
 [![NPM version](https://img.shields.io/npm/v/@anthropic-ai/sdk.svg)](https://npmjs.org/package/@anthropic-ai/sdk)
 
-Este sistema tem por finalidade implementar uma arquitetura de microserviços para gerenciar o ciclo de desenvolvimento e manutenção de softwares.
+O sistema tem por finalidade implementar uma arquitetura de microserviços para gerenciar o ciclo de desenvolvimento e manutenção de softwares.
 
-## The System Design Primer
+## Arquitetura do projeto
 
 <p align="center">
   <img src="docs/images/design.png">
@@ -17,25 +17,19 @@ This project is licensed under the MIT License. See the [LICENSE](./docs/LICENSE
 
 ## SUMÁRIO
 
-* [System design topics: start here](#system-design-topics-start-here)
-    * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    * [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    * [Next steps](#next-steps)
-* [Releases](## RELEASES - Versões)
-* [Documentação](##DOCUMENTAÇÃO)
-    * [Instalação](#cap-theorem)
-    * [Inicialização](### INICIALIZAR O SISTEMA)
+- [ Sistema para gerenciamento do ciclo de vida de software](#-sistema-para-gerenciamento-do-ciclo-de-vida-de-software)
+  - [Arquitetura do projeto](#arquitetura-do-projeto)
+  - [LICENÇA DE USO](#licença-de-uso)
+  - [SUMÁRIO](#sumário)
+  - [RELEASES](#releases)
+  - [DOCUMENTAÇÃO](#documentação)
+    - [INSTALAÇÃO](#instalação)
+    - [INICIALIZAR](#inicializar)
+  - [DEPENDÊNCIA](#dependência)
+  - [CONTRIBUIÇÕES](#contribuições)
 
-* [Dependência](##DEPENDÊNCIA)
-    * [Weak consistency](#weak-consistency)
-    * [Eventual consistency](### INSTALAÇÃO)
-    * [Strong consistency](#strong-consistency)
-* [Contribuições](## CONTRIBUIÇÕES)
-    * [Fail-over](#fail-over)
-    * [Replication](#replication)
-    * [Availability in numbers](#availability-in-numbers)
 
-## RELEASES - Versões
+## RELEASES
 
 See [CHANGELOG.md](./docs/CONTRIBUTING.md).
 
@@ -53,7 +47,7 @@ Mais informações no link **[platform.claude.com/docs/en/api/sdks/typescript](h
 pnpm install 
 ```
 
-### INICIALIZAR O SISTEMA
+### INICIALIZAR
 
 ```sh
 pnpm start 

@@ -1,8 +1,9 @@
-# <img src=".github/logo.svg" alt="" width="32"> Sistema para gerenciamento do ciclo de vida de software
+# <img src=".github/logo.svg" alt="" width="32"> Gerenciamento do ciclo de vida das aplicações.
+
 
 [![NPM version](https://img.shields.io/npm/v/@anthropic-ai/sdk.svg)](https://npmjs.org/package/@anthropic-ai/sdk)
 
-O sistema tem por finalidade implementar uma arquitetura de microserviços para gerenciar o ciclo de desenvolvimento e manutenção de softwares.
+O sistema OpenALM tem por finalidade gerenciar o ciclo de vida das aplicações (softwates) utilizando uma arquitetura de microserviços escalável e adaptativa para garantir uma gestão eficiente sobre as tarefas de  gerenciamento do projeto, pessoal, tarefas, implementação dos produtos, venda/localção, manutenção dos softwares.
 
 ## Arquitetura do projeto
 
@@ -13,11 +14,11 @@ O sistema tem por finalidade implementar uma arquitetura de microserviços para 
 
 ## LICENÇA DE USO
 
-This project is licensed under the MIT License. See the [LICENSE](./docs/LICENSE) file for details.
+Este projeto está licenciado sobre a licença MIT. Veja em [LICENSE](./docs/LICENSE) file for details.
 
 ## SUMÁRIO
 
-- [ Sistema para gerenciamento do ciclo de vida de software](#-sistema-para-gerenciamento-do-ciclo-de-vida-de-software)
+- [ Gerenciamento do ciclo de vida das aplicações.](#-gerenciamento-do-ciclo-de-vida-das-aplicações)
   - [Arquitetura do projeto](#arquitetura-do-projeto)
   - [LICENÇA DE USO](#licença-de-uso)
   - [SUMÁRIO](#sumário)

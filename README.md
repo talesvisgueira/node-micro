@@ -24,9 +24,9 @@ Este projeto está licenciado sobre a licença MIT. Veja em [LICENSE](./docs/LIC
   - [SUMÁRIO](#sumário)
   - [RELEASES](#releases)
   - [DOCUMENTAÇÃO](#documentação)
+  - [DEPENDÊNCIAS](#dependências)
     - [INSTALAÇÃO](#instalação)
     - [INICIALIZAR](#inicializar)
-  - [DEPENDÊNCIA](#dependência)
   - [MÓDULOS DO SISTEMA](#módulos-do-sistema)
   - [CONTRIBUIÇÕES](#contribuições)
 
@@ -42,7 +42,21 @@ See [CHANGELOG.md](./docs/CONTRIBUTING.md).
 
 ## DOCUMENTAÇÃO
 
-Mais informações no link **[platform.claude.com/docs/en/api/sdks/typescript](https://platform.claude.com/docs/en/api/sdks/typescript)**.
+Mais informações no link **[openALM.com](https://openalm.com)**.
+
+
+## DEPENDÊNCIAS
+
+Node.js: v24.17.0
+Pnpm: v11.8.0
+Typescript: v6.0.2
+Vitest: v4.1.8
+Nestjs: v11.0.1
+Angular: v22.0.2
+Amqplib: v2.0.1
+PostgreSql: v17
+Prometheus: v3.12.0
+Grafana: v13.0.2
 
 ### INSTALAÇÃO
 
@@ -55,10 +69,6 @@ pnpm install
 ```sh
 pnpm start 
 ```
-
-## DEPENDÊNCIA
-
-Node.js 24.17.0+
 
 ## MÓDULOS DO SISTEMA
 

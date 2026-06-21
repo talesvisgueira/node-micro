@@ -3,7 +3,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@anthropic-ai/sdk.svg)](https://npmjs.org/package/@anthropic-ai/sdk)
 
-O sistema OpenALM tem por finalidade gerenciar o ciclo de vida das aplicações (softwates) utilizando uma arquitetura de microserviços escalável e adaptativa para garantir uma gestão eficiente sobre as tarefas de  gerenciamento do projeto, pessoal, tarefas, implementação dos produtos, venda/localção, manutenção dos softwares.
+O sistema OpenALM tem por finalidade gerenciar o ciclo de vida das aplicações (softwates), utilizando uma arquitetura de microserviços escaláveis e adaptativas para garantir uma gestão eficiente sobre as tarefas de  gerenciamento de projetos, pessoal, tarefas de implementações dos produtos, venda/localção e manutenção dos softwares.
 
 ## Arquitetura do projeto
 
@@ -34,9 +34,10 @@ Este projeto está licenciado sobre a licença MIT. Veja em [LICENSE](./docs/LIC
 
 See [CHANGELOG.md](./docs/CONTRIBUTING.md).
 
-| RELEASES | |
-|---|---|
-| v0.0.1 | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| RELEASES | DATE| TYPE | LINK |
+|---|---|---|---|
+| v0.1.0 | 2026-08-20 | CANDIDATE | [Detalhe](docs/CHANGELOG.md/#010-2023-07-11)  |
+| v1.0.0 | 2027-01-01 | RELEASE | [Detalhe](docs/CHANGELOG.md/#100-2023-07-11)  |
 
 ## DOCUMENTAÇÃO
 

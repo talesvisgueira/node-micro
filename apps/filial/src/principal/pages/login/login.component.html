@@ -1,0 +1,48 @@
+
+<form class="app-login-page" [formGroup]="loginForm"  >
+<div >
+    <div class="imgcontainer" >
+        <img class="avatar" src="../../../../../public/avatar.png" alt="Avatar"  >
+    </div>
+    <div class="container">
+        <label for="uname"><b>Nome do usuário</b></label>
+        <input type="text" formControlName="username" placeholder="Enter Username" name="uname"   required>
+        @if(loginForm.controls['username'].touched ) {
+            <div class="text-danger">
+                @if(loginForm.controls['username'].errors?.['required']) {
+                    <span > Campo 'NOME DO USUÁRIO' é obrigatório</span>
+                }
+                @if(loginForm.controls['username'].errors?.['minlength']) {
+                    <span > O campo deve possui no mínimo 05 caracteres</span>
+                }
+            </div>
+        }
+
+        <label for="psw"><b>Senha</b></label>
+        <input type="password" formControlName="password" placeholder="Enter Password" name="psw"   required>
+        <div class="text-danger">
+            @if(loginForm.controls['username'].touched ) {
+                <div class="text-danger">
+                    @if(loginForm.controls['password'].errors?.['required']) {
+                        <span > Campo 'SENHA' é obrigatório</span>
+                    }
+                    @if(loginForm.controls['password'].errors?.['minlength']) {
+                        <span > O campo deve possui no mínimo 08 caracteres</span>
+                    }
+                </div>
+            }
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid" (click)="onSubmit()" >Login</button>
+        <div class="text-danger" [hidden]="isLoginValid">  <span > Usuário ou senha inválido. </span> </div>
+        <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn" (click)="onCancel()" >Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </div>
+</div>
+</form>

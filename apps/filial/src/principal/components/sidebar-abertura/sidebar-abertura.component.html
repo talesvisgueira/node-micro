@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto px-0">
+            <div id="sidebar" class="collapse collapse-horizontal show border-end"  >
+                <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-95">
+                    <a href="access" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Empresa</span> </a>
+                    <a href="access/objectives" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Portifólio</span> </a>
+                    <a href="access/advantages" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Serviços</span> </a>
+                    <a href="access/features" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Propdutos</span> </a>
+                    <a href="access/releases" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Clientes</span> </a>
+                    <a href="access/questions" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Dúvidas</span> </a>
+                    <a href="access/contact" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Contato</span> </a>
+                    <a href="login" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Entrar</span> </a>
+                </div>
+            </div>
+        </div>
+        <main class="col ps-md-2 pt-2">
+            <div class="row">
+                <div class="col-12">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

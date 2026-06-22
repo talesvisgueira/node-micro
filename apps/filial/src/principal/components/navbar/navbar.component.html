@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <div class="container-fluid" >
+      
+      <a class="navbar-brand" href="#">Home</a>
+      <!-- <button class="btn float-end" type="button" data-bs-target="#sidebar" data-bs-toggle="collapse"
+              aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="true" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+      </button> -->
+
+      <div class="collapse navbar-collapse  text-right" id="navbarSupportedContent">
+        <div class=" navbar-collapse text-right"  >
+            <span class="text">   &nbsp;  </span>
+        </div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- <li class="nav-item" [hidden]="!isLoginValid"> <a class="nav-link active" aria-current="page" href="home">HOME</a> </li> -->
+            <li class="nav-item"> <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Organização</a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Projetos</a> </li>
+            <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Serviços</a> </li>
+            <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Produtos</a> </li>
+            <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Clientes</a> </li>
+            <li class="nav-item"><a class="nav-link" href="#" tabindex="-1" aria-disabled="false">Ajuda</a> </li>
+            <li class="nav-item"> </li>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </ul>
+        <!-- <span class="text" [hidden]="!isLoginValid"> Usuário: &nbsp;{{ username() }} &nbsp;  </span> -->
+        <div class="" [hidden]="!isLoginValid">
+            <form class="d-flex" [hidden]="!isLoginValid">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button> &nbsp;
+            </form>
+        </div>
+        <form class="d-flex" >
+          &nbsp;
+          <button class="btn btn-outline-success"  [hidden]="isLoginValid"  (click)="onLogin()" type="submit">ENTRAR</button>
+          <button class="btn btn-outline-warning"  [hidden]="!isLoginValid"  (click)="onExit()" type="submit">SAIR</button>
+        </form>
+      </div>
+    </div>
+  </nav>

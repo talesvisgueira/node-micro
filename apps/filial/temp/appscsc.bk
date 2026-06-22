@@ -1,0 +1,188 @@
+
+		body,
+		p,
+		a,
+		li,
+		span,
+		div,
+		label,
+		input,
+		textarea,
+		select,
+		button {
+			font-family: 'Jost', sans-serif;
+		}
+
+		#header-login-modal .modal-content {
+			background-color: #1f1f1f;
+			border: 1px solid #3a3a3a;
+			color: #f1f1f1;
+		}
+
+		#header-login-modal .modal-header,
+		#header-login-modal .modal-footer {
+			border-color: #3a3a3a;
+		}
+
+		#header-login-form {
+			display: flex;
+			flex-direction: column;
+			row-gap: 1rem;
+		}
+
+		#header-login-form .form-control {
+			height: 44px;
+			line-height: 44px;
+			padding: 0 12px;
+			background-color: #2a2a2a;
+			border-color: #555;
+			color: #f0f0f0;
+		}
+
+		#header-login-form .form-control::placeholder {
+			color: #b8b8b8;
+			opacity: 1;
+		}
+
+		#header-login-form .form-control:focus {
+			background-color: #333;
+			border-color: var(--bs-green);
+			color: #fff;
+			box-shadow: 0 0 0 0.2rem rgba(185, 141, 19, 0.35);
+		}
+
+		#header-login-form .form-check-input {
+			width: 1rem;
+			height: 1.25rem;
+			min-height: 1.25rem;
+			margin-top: 0.2rem;
+			margin-right: 0.5rem;
+			float: none;
+			vertical-align: middle;
+			line-height: normal;
+			padding: 0;
+		}
+
+		#header-login-form .form-check-input:checked {
+			background-color: var(--bs-green);
+			border-color: var(--bs-green);
+		}
+
+		#header-login-form .form-check-input:focus {
+			border-color: var(--bs-green);
+			box-shadow: 0 0 0 0.2rem rgba(185, 141, 19, 0.35);
+		}
+
+		#header-login-form .form-check {
+			display: flex;
+			align-items: center;
+			gap: 0.35rem;
+		}
+
+		#header-login-form .form-check-label {
+			margin-bottom: 0;
+			line-height: 1.2;
+		}
+
+		#header-login-form .h-captcha {
+			max-width: 100%;
+		}
+
+		#header-login-form .gen-login-links a {
+			font-size: 0.9rem;
+			text-decoration: none;
+		}
+
+		#header-login-form .btn-primary {
+			--bs-btn-bg: var(--bs-green);
+			--bs-btn-border-color: var(--bs-green);
+			--bs-btn-color: #198754;
+			--bs-btn-hover-bg: #198754;
+			--bs-btn-hover-border-color: #198754;
+			--bs-btn-hover-color: #198754;
+			--bs-btn-active-bg: #198754;
+			--bs-btn-active-border-color: #198754;
+			--bs-btn-active-color: #198754;
+		}
+
+		#gen-user-btn-login.vl-access-button-outline {
+			background: transparent !important;
+			border: 1px solid var(--bs-green) !important;
+			color: var(--bs-green) !important;
+		}
+
+		#gen-user-btn-login.vl-access-button-outline .gen-button-block {
+			background: transparent !important;
+		}
+
+		#gen-user-btn-login.vl-access-button-outline .gen-button-text {
+			color: var(--bs-green) !important;
+		}
+
+		#gen-user-btn-login.vl-access-button-outline .gen-button-line-left {
+			background: var(--bs-green);
+		}
+
+		#gen-user-btn-login.vl-access-button-outline:hover {
+			background: rgba(185, 141, 19, 0.14) !important;
+			color: var(--bs-green) !important;
+		}
+
+		#header-login-form .gen-login-links {
+			margin-top: 1.5rem;
+			justify-content: flex-end;
+		}
+
+      #gen-loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #161616;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.5s ease-in-out, visibility 2.0s ease-in-out;
+   }
+
+   #gen-loading.show {
+      opacity: 0.5;
+      visibility: visible;
+   }
+
+   #gen-loading img {
+      max-width: 250px;
+      border-radius: 50%;
+   }
+
+   @keyframes pulse {
+      from {
+         transform: scale(1);
+      }
+
+      to {
+         transform: scale(1.05);
+      }
+   }
+
+   #gen-loading-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2.5s infinite ease-in-out alternate;
+      user-select: none;
+   }
+
+   #gen-loading-center div {
+      color: green;
+      font-size: 4rem;
+      font-weight: bold;
+      margin-left: 1rem;
+   }
+
+   
+

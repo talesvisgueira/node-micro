@@ -1,0 +1,704 @@
+
+<!-- saved from url=(0023)https://wrevolving.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Exército Brasileiro</title>
+	<link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="./img/favicon.ico">
+	<!-- CSS bootstrap-->
+	<link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="../../public/css/bootstrap-icons.min.css"> -->
+	<!--  Style -->
+	<link rel="stylesheet" href="../../public/css/owl.carousel.css">
+	<link rel="stylesheet" href="../../public/css/magnific-popup.css">
+			<script src="../../public/js/api.js" async="" defer=""></script>
+		<link rel="stylesheet" href="../../public/css/style.css">
+	<link rel="stylesheet" href="../../public/css/site-public-layout.css">
+
+
+	<!-- 1. jQuery (DEVE SER O PRIMEIRO) -->
+	<script src="../../public/js/jquery-3.7.1.min.js"></script>
+
+	<!-- 2. Bootstrap 5 (o bundle já inclui o Popper.js) -->
+	<script src="../../public/js/bootstrap.bundle.min.js"></script>
+
+	<!-- 3. Outros Plugins -->
+	<script src="../../public/js/owl.carousel.min.js"></script>
+	<script src="../../public/js/jquery.magnific-popup.min.js"></script>
+
+	<!-- 4. Arquivos de funções do tema (se necessário) -->
+	<script rel="stylesheet" href="https://www.wrevolving.com/public/js/functions.js"></script>
+
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.wrevolving.com/">
+	<meta name="theme-color" content="#F3C921">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:domain" content="https://www.wrevolving.com/">
+	<meta property="twitter:url" content="https://www.wrevolving.com/">
+
+			<meta name="twitter:title" content="Exército Brasileiro">
+
+		<meta name="twitter:image" content="https://www.wrevolving.com/public/assets/favicon.ico">
+
+		<meta property="og:title" content="Exército Brasileiro">
+		<meta property="og:image" content="https://www.wrevolving.com/public/assets/favicon.ico">
+
+	</head>
+
+<body>
+
+<div id="gen-loading" class="">
+   <div id="gen-loading-center">
+      <img src="./img/favicon.ico" alt="loading">
+      <div>Bem vindo ao site do Exército Brasileiro</div>
+   </div>
+</div>
+<script>
+   const loader = document.getElementById('gen-loading');
+   loader.classList.add('show');
+   window.addEventListener('load', function () {
+      loader.classList.remove('show');
+   });
+</script>
+	<link rel="stylesheet" href="../../public/css/bootstrap-toaster.min.css">
+	<script src="../../public/js/bootstrap-toaster.min.js"></script><div id="toastContainer" class="toast-container position-fixed top-0 end-0" aria-live="polite"></div>
+	<script>
+		let toast = {
+			title: '',
+			message: '',
+			status: TOAST_STATUS.SUCCESS,
+			timeout: 3000
+		};
+		Toast.setTheme(TOAST_THEME.DARK);
+		Toast.enableTimers(TOAST_TIMERS.DISABLED);
+		Toast.setMaxCount(10);
+		Toast.enableQueue(true);
+		function popMessage(titulo, mensagem, status) {
+			toast.message = mensagem;
+			toast.title = titulo;
+			toast.status = status;
+			Toast.create(toast);
+		}
+	</script>
+
+	<header id="gen-header" class="gen-header-style-1 gen-has-sticky">
+		<div class="gen-bottom-header bg-transparent " >  <!--  navbar-dark bg-success -->
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 " >
+						<nav class="navbar navbar-expand-lg ">
+							<a class="navbar-brand" href="https://www.wrevolving.com/site">
+								<img class="img-fluid logo" src="./img/favicon.ico" alt="Brasil">
+								<div>Exército Brasileiro</div>
+							</a>
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<div id="gen-menu-contain" class="gen-menu-contain">
+									<ul id="gen-main-menu" class="navbar-nav ms-auto">
+
+										<li class="menu-item active">
+											<a href="https://www.wrevolving.com/">Home</a>
+										</li>
+										<li class="menu-item ">
+											<a href="https://www.wrevolving.com/">Instruções</a>
+										</li>
+										<li class="menu-item ">
+											<a href="https://www.wrevolving.com/site/noticias">Notícias</a>
+										</li>
+										<li class="menu-item ">
+											<a href="https://www.wrevolving.com/">Referências</a>
+										</li>
+																													</ul>
+								</div>
+							</div>
+							<div class="gen-header-info-box">
+									<div class="gen-account-holder gen-account-holder-login">
+										<a href="javascript:void(0)" id="gen-user-btn-login" data-bs-toggle="modal" data-bs-target="#header-login-modal" class="gen-button vl-access-button-outline">
+											<div class="gen-button-block">
+												<span class="gen-button-line-left"></span>
+												<span class="gen-button-text">Acessar</span>
+											</div>
+										</a>
+									</div>
+										<div class="gen-btn-container">
+										<a href="" class="gen-button">
+											<div class="gen-button-block">
+												<span class="gen-button-line-left"></span>
+												<span class="gen-button-text">MÓDULO - OM</span>
+											</div>
+										</a>
+									</div>
+															</div>
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<i class="bi bi-list"></i>
+							</button>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+         <section class="banner-section">
+         <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="true" data-desk_num="1" data-lap_num="1" data-tab_num="1" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="true" data-margin="0">
+
+
+                <div class="owl-stage-outer">
+				  <div class="owl-stage" style="transform: translate3d(-11430px, 0px, 0px); transition: 0.25s; width: 30480px;">
+					<div class="owl-item cloned" style="width: 1905px;">
+						<div class="item d-flex align-items-center" style="height: 90vh;background-image: url('./img/maxresdefault.jpg'); background-size: cover; background-position: center;">
+							<div class="container">
+								<div class="row align-items-center">
+									<div class="col-lg-12 text-white">
+									<!-- <h5 class="text-primary-color fw-bold" style="letter-spacing: 2px;">MAIS RECENTE</h5> -->
+									<h1 class="display-12 fw-bold" style="color: #00ff00;" >SISTEMA DE EXAME DE PAGAMENTO DE PESSOAL DO EXÉRCITO - SEPPEx</h1>
+									<p>Sistema para realização do exame da folha de pagamento dos militares da ativa, veteranos, servidores civis em exercício e pensionistas do Exército Brasileiro.</p>
+									</div>
+								</div>
+							</div>
+               			</div>
+					</div>
+
+					<div class="owl-item cloned" style="width: 1905px;">
+						<div class="item d-flex align-items-center" style="height: 90vh;background-image: url(&#39;./img/maxresdefault(3).jpg&#39;); background-size: cover; background-position: center;">
+							<div class="container">
+								<div class="row align-items-center">
+									<div class="col-lg-12 text-white">
+									<!-- <h5 class="text-primary-color fw-bold" style="letter-spacing: 2px;">MAIS RECENTE</h5> -->
+									<h1 class="display-12 fw-bold" style="color: #00ff00;" >SISTEMA DE EXAME DE PAGAMENTO DE PESSOAL DO EXÉRCITO - SEPPEx</h1>
+									<p>Sistema para realização do exame da folha de pagamento dos militares da ativa, veteranos, servidores civis em exercício e pensionistas do Exército Brasileiro.</p>
+									</div>
+								</div>
+							</div>
+               			</div>
+					</div>
+				   </div>
+				</div>
+		</div>
+
+               <!-- <div class="owl-item cloned" style="width: 1905px;"><div class="item  d-flex align-items-center" style="height: 90vh;background-image: url(&#39;../../public/maxresdefault(3).jpg&#39;); background-size: cover; background-position: center;">
+                  <div class="container">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6 text-white">
+                           <h5 class="text-primary-color fw-bold" style="letter-spacing: 2px;">MAIS RECENTE</h5>
+                           <h1 class="display-3 fw-bold">SIPPEXxx</h1>
+                           <p>Sistema de Pagamento de Pessoal do Exército</p>
+                        </div>
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center flex-column zoom-parent">
+                           <a href="https://www.youtube.com/watch?v=JLI0vbWsw-w" class="text-white text-decoration-none text-center gen-video-popup">
+                              <i class="bi bi-play-fill zoom-on-hover" style="font-size: 2.5rem; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; padding-left: 5px;"></i>
+                           </a>
+                           <h4 class="mt-3 text-white fw-bold zoom-on-hover">Assista ao video</h4>
+                        </div>
+                     </div>
+                  </div>
+               </div></div> -->
+
+
+
+
+
+
+
+
+
+               <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div>
+      </section>
+
+   <section class="video-carousel-section container pt-5">
+      <div class="section-title-holder">
+         <h2>INSTRUÇÕES SOBRE EXAME DE PAGAMENTO</h2>
+         <div class="gen-btn-container">
+         <a href="https://www.wrevolving.com/site/videos/Vis%C3%A3o%20Libert%C3%A1ria" class="gen-button">
+               <div class="gen-button-block">
+                  <span class="gen-button-line-left"></span>
+                  <span class="gen-button-text">Mais Vídeos</span>
+               </div>
+            </a>
+         </div>
+      </div>
+      <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="true" data-desk_num="4" data-lap_num="3" data-tab_num="2" data-mob_num="1" data-margin="20">
+
+                           <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all; width: 4265px;"><div class="owl-item active" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault.jpg" alt="CHASSI de CELULAR - LULA querendo mandar até no SEU TELEFONE">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=GywKU5GyX6I" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5>CHASSI de CELULAR - LULA querendo mandar até no SEU TELEFONE</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div><div class="owl-item active" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault(1).jpg" alt="O PACIENTE em ÚLTIMO Lugar: a nova prioridade do estado">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=JXKPskikiN8" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5>O PACIENTE em ÚLTIMO Lugar: a nova prioridade do estado</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div><div class="owl-item active" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault(2).jpg" alt="Nova Pesquisa Prova que Campanha de Flávio Bolsonaro ainda está forte e tem chances reais">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=BqD9BgW8mH8" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5>Nova Pesquisa Prova que Campanha de Flávio Bolsonaro ainda está forte e tem chances reais</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div><div class="owl-item active" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault(3).jpg" alt="Brasil alcança o MAIOR NÍVEL de DESENVOLVIMENTO HUMANO da história no governo LULA. Será?">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=uxA8dh3M_Lw" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5>Brasil alcança o MAIOR NÍVEL de DESENVOLVIMENTO HUMANO da história no governo LULA. Será?</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div><div class="owl-item" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault(4).jpg" alt="Quando o Estado decide quem pode fiscalizar o Estado">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=KcnbjCL3jUA" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5>Quando o Estado decide quem pode fiscalizar o Estado</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div><div class="owl-item" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault(5).jpg" alt="Banco Central PROÍBE criptomoedas em transferências para o exterior">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=jNRnyNJQ-Uc" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5>Banco Central PROÍBE criptomoedas em transferências para o exterior</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div><div class="owl-item" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault(6).jpg" alt="NOVOS DECRETOS do LULA CENSURAM as REDES SOCIAIS - COMO EVITAR A CENSURA e O QUE ISSO SIGNIFICA">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=1ikLkfm0ZSo" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5>NOVOS DECRETOS do LULA CENSURAM as REDES SOCIAIS - COMO EVITAR A CENSURA e O QUE ISSO SIGNIFICA</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div><div class="owl-item" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault(7).jpg" alt=" Governo derruba liminar e AMAZON terá de vender apenas PRODUTOS HOMOLOGADOS pela ANATEL">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=2YcPxhOeqq8" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5> Governo derruba liminar e AMAZON terá de vender apenas PRODUTOS HOMOLOGADOS pela ANATEL</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div><div class="owl-item" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault(8).jpg" alt="O fim do TURISMO em CUBA: Visa, Mastercard e Meliá vão embora da ilha">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=tX4OKQglPTY" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5>O fim do TURISMO em CUBA: Visa, Mastercard e Meliá vão embora da ilha</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div><div class="owl-item" style="width: 406.5px; margin-right: 20px;"><div class="item">
+                  <div class="movie-card">
+                     <div class="movie-card-img-container">
+                                          <img src="./ExercitoBrasileiro_files/maxresdefault(9).jpg" alt="Jones Manoel, o comunista Iphone, não aguentou o comunismo e pediu para sair do partido!">
+                        <div class="movie-card-overlay">
+                           <i class="bi bi-play-circle-fill play-icon"></i>
+                           <!-- O link do popup envolve tudo para ser clicável -->
+                        <a href="https://www.youtube.com/watch?v=VrMi1xgyh80" class="gen-video-popup" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></a>
+                        </div>
+                     </div>
+                     <div class="movie-card-info">
+                     <h5>Jones Manoel, o comunista Iphone, não aguentou o comunismo e pediu para sair do partido!</h5>
+                        <p>
+                        <span class="tag-primary">Visão Libertária</span>
+                        </p>
+                     </div>
+                  </div>
+               </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"></div></div>
+   </section>
+
+
+
+   <!-- 5. Scripts customizados -->
+   <script>
+      $(document).ready(function () {
+         // Inicialização do novo slider customizado
+         $('#custom-slider-owl').owlCarousel({
+            items: 1,
+            nav: false,
+            dots: false,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: false,
+            smartSpeed: 800,
+            margin: 0
+         });
+
+         // Inicialização dos outros Owl Carousel (exceto o customizado)
+         $('.owl-carousel').not('#custom-slider-owl').each(function () {
+            var $this = $(this);
+            var options = {
+               dots: false,
+               nav: false,
+               items: $this.data('desk_num') || 1,
+               loop: $this.data('loop') === true,
+               autoplay: $this.data('autoplay') === true,
+               autoplayTimeout: 5000,
+               margin: $this.data('margin') || 0,
+               responsive: {
+                  0: { items: $this.data('mob_sm') || 1 },
+                  480: { items: $this.data('mob_num') || 1 },
+                  768: { items: $this.data('tab_num') || 1 },
+                  1024: { items: $this.data('lap_num') || 1 },
+                  1200: { items: $this.data('desk_num') || 1 }
+               }
+            };
+            $this.owlCarousel(options);
+         });
+
+         // Magnific Popup para vídeo
+         $('.gen-video-popup').magnificPopup({
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+         });
+      });
+   </script>
+
+
+			<div class="modal fade" id="header-login-modal" tabindex="-1" aria-labelledby="header-login-modal-label" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header" style="background-color: #198754;">
+						<h5 class="modal-title" id="header-login-modal-label">Autenticação no sistema</h5>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+					</div>
+					<div class="modal-body">
+						<form id="header-login-form" method="post" autocomplete="on">
+							<div>
+								<input type="email" id="header-login-email" name="email" class="form-control" placeholder="E-mail" required="">
+							</div>
+							<div>
+								<input type="password" id="header-login-senha" name="senha" class="form-control" placeholder="Senha" required="">
+							</div>
+															<!-- <div class="d-flex justify-content-center">
+									<div class="h-captcha" data-sitekey="f70c594b-cc97-4440-980b-6b506509df17">
+                    <iframe src="./hcaptcha.html" tabindex="0" frameborder="0" scrolling="no" allow="private-state-token-redemption"
+                    title="Widget contendo caixa de seleção para desafio de segurança hCaptcha" data-hcaptcha-widget-id="09k56ms50h4w" data-hcaptcha-response=""
+                    style="pointer-events: auto; background-color: rgba(255, 255, 255, 0); border-radius: 4px; width: 302px; height: 76px; overflow: hidden;">
+                    </iframe><textarea id="g-recaptcha-response-09k56ms50h4w" name="g-recaptcha-response" style="display: none;">
+                    </textarea><textarea id="h-captcha-response-09k56ms50h4w" name="h-captcha-response" style="display: none;"></textarea></div>
+								</div> -->
+														<div class="form-check">
+								<input type="checkbox" id="header-login-lembrar" name="lembrar" class="form-check-input" value="lembrar">
+								<label class="form-check-label" for="header-login-lembrar">Lembre-se de mim</label>
+							</div>
+							<div class="d-grid">
+								<button class="btn btn btn-success" type="submit">Autenticar</button>
+							</div>
+							<div class="d-flex justify-content-end gen-login-links">
+								<a href="https://www.wrevolving.com/site/esqueci-senha">Esqueci minha senha</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<footer class="pb-0">
+		<div class="container">
+			<hr>
+			<!-- Widgets START -->
+			<div class="row pt-5">
+				<!-- Footer Widget -->
+				<div class="col-md-6 col-lg-4 mb-4">
+					<img class="img-thumbnail rounded-circle mr-3" style="max-width: 3rem;" src="./ExercitoBrasileiro_files/rodape.png">
+					<span class="lead">Mundo Em Revolução</span>
+					<p class="mt-2 lh-sm fw-light">Bem vindos ao canal "Mundo em Revolução". O nome tem sentidos múltiplos. Nosso mundo completa uma revolução todos os dias, girando em torno do próprio eixo. Mas também mostra como a sociedade, a economia e a geopolítica mundiais estão sempre em transformação e mudança. Nada é estático e definitivo. Além disso, como um canal libertário, acreditamos que a tecnologia e a informação descentralizada vai trazer muitas mudanças, uma revolução pacífica, que vai levar a uma sociedade mais libertária.</p>
+				</div>
+
+				<!-- Footer Widget -->
+				<div class="col-md-6 col-lg-3 mb-4">
+					<h5 class="mb-4">Navegação</h5>
+					<div class="row">
+						<div class="col-6">
+							<ul class="nav flex-column">
+								<li class="nav-item"><a class="mb-2" href="https://www.wrevolving.com/site/artigos">Artigos</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-6">
+							<ul class="nav flex-column">
+								<li class="nav-item"><a class="mb-2" href="https://www.wrevolving.com/site/contato">Contato</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-6">
+							<ul class="nav flex-column">
+								<li class="nav-item"><a class="mb-2" href="https://www.wrevolving.com/links">Todos os
+										projetos</a>
+								</li>
+							</ul>
+						</div>
+																					<div class="col-6">
+									<ul class="nav flex-column">
+										<li class="nav-item"><a class="mb-2" href="https://www.wrevolving.com/site/pagina/como-escrever-artigos-para-o-site">Como escrever artigos para o site</a>
+										</li>
+									</ul>
+								</div>
+																		</div>
+				</div>
+
+				<!--
+				<div class="col-sm-6 col-lg-3 mb-4">
+					<h5 class="mb-4">Browse by Tag</h5>
+					<ul class="list-inline">
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-primary-soft">Travel</a></li>
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-warning-soft">Business</a></li>
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-success-soft">Tech</a></li>
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-danger-soft">Gadgets</a></li>
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-info-soft">Lifestyle</a></li>
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-primary-soft">Vaccine</a></li>
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-warning-soft">Marketing</a></li>
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-success-soft">Sports</a></li>
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-danger-soft">Covid-19</a></li>
+						<li class="list-inline-item"><a href="#" class="btn btn-sm btn-info-soft">Politics</a></li>
+					</ul>
+				</div> -->
+
+				<!-- Footer Widget -->
+				<div class="col-sm-12 col-lg-5 mb-4">
+					<h5 class="mb-4">Nossas redes sociais</h5>
+					<div class="row">
+						<div class="col-6">
+							<ul class="nav flex-column">
+								<li class="nav-item text-uppercase">Ancapsu</li>
+								<li class="nav-item"><a class="" href="https://www.youtube.com/@ancap_su"><i class="bi bi-youtube me-2" style="color:#ff0000;"></i>YouTube</a></li>
+								<li class="nav-item"><a class="" href="https://www.instagram.com/ancap.su"><i class="bi bi-instagram me-2" style="color:#E4405F;"></i>Instagram</a>
+								</li>
+								<li class="nav-item"><a class="" href="https://twitter.com/ancapsu"><i style="color: #40bff5;" class="bi bi-twitter-x me-2"></i>Twitter</a></li>
+								<li class="nav-item text-uppercase mt-2">Safe source</li>
+								<li class="nav-item"><a class="" href="https://www.youtube.com/@safesrc"><i class="bi bi-youtube me-2" style="color:#ff0000;"></i>YouTube</a></li>
+								<li class="nav-item"><a class="" href="https://twitter.com/safesrc1"><i style="color: #40bff5;" class="bi bi-twitter-x me-2"></i>Twitter</a></li>
+							</ul>
+						</div>
+						<div class="col-6">
+							<ul class="nav flex-column">
+								<li class="nav-item text-uppercase">VISÃO LIBERTÁRIA</li>
+								<li class="nav-item"><a class="" href="https://www.youtube.com/@Visao_Libertaria"><i class="bi bi-youtube me-2" style="color:#ff0000;"></i>YouTube</a></li>
+
+								<li class="nav-item"><a class="" href="https://twitter.com/visaolibertaria"><i style="color: #40bff5;" class="bi bi-twitter-x me-2"></i>Twitter</a></li>
+								<li class="nav-item">&nbsp;</li>
+								<li class="nav-item text-uppercase mt-2">mundo em revolução</li>
+								<li class="nav-item"><a class="" href="https://www.youtube.com/@wrevolving"><i class="bi bi-youtube me-2" style="color:#ff0000;"></i>YouTube</a></li>
+
+								<li class="nav-item"><a class="" href="https://twitter.com/MundoEmRevo"><i style="color: #40bff5;" class="bi bi-twitter-x me-2"></i>Twitter</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Widgets END -->
+		</div>
+		<div class="container container-fluid py-2 px-sm-3 px-md-5">
+			<p class="m-0 text-lg-end">
+				Desenvolvido por
+				<a class="text-reset btn-link font-light" href="https://cds.eb.mil.br/">Centro de Desenvolvimento de Sistemas - CDS-EB</a>.
+			</p>
+		</div>
+	</footer>
+
+	<script>
+		$(document).ready(function () {
+			var qs = new URLSearchParams(window.location.search);
+			var deveAbrirLogin = qs.get('openLogin') === '1' || qs.has('url');
+			if (deveAbrirLogin) {
+				var loginModalEl = document.getElementById('header-login-modal');
+				if (loginModalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+					bootstrap.Modal.getOrCreateInstance(loginModalEl).show();
+				}
+
+				if (qs.has('openLogin')) {
+					qs.delete('openLogin');
+					var novaQuery = qs.toString();
+					var novaUrl = window.location.pathname + (novaQuery ? ('?' + novaQuery) : '') + window.location.hash;
+					window.history.replaceState({}, '', novaUrl);
+				}
+			}
+
+			// --- User Account Menu Toggle ---
+			$('.gen-account-holder:not(.gen-account-holder-login) #gen-user-btn').on('click', function (e) {
+				e.stopPropagation();
+				var menu = $('.gen-account-menu');
+
+				// Usamos a classe que o tema espera: 'gen-form-show'
+				if (menu.hasClass('gen-form-show')) {
+					menu.removeClass('gen-form-show');
+				} else {
+					menu.addClass('gen-form-show');
+				}
+			});
+
+			// Fecha o menu se clicar fora dele
+			$(document).on('click', function (e) {
+				var menu = $('.gen-account-menu');
+				if (!$(e.target).closest('.gen-account-holder').length) {
+					if (menu.hasClass('gen-form-show')) {
+						menu.removeClass('gen-form-show');
+					}
+				}
+			});
+
+			$(document).on('submit', '#header-login-form', function (e) {
+				e.preventDefault();
+				$.ajax({
+					type: 'POST',
+					async: false,
+					url: 'https://www.wrevolving.com/site/login',
+					data: $(this).serialize(),
+					dataType: 'json',
+					success: function (retorno) {
+						if (retorno.status === true) {
+							popMessage('Sucesso!', retorno.mensagem, TOAST_STATUS.SUCCESS);
+							setTimeout(function () {
+								var urlDestino = qs.get('url');
+								if (urlDestino && urlDestino.indexOf('https://www.wrevolving.com/') === 0) {
+									window.location.href = urlDestino;
+									return;
+								}
+								window.location.href = 'https://www.wrevolving.com/colaboradores/perfil';
+							}, 1000);
+						} else {
+							popMessage('ATENCAO', retorno.mensagem, TOAST_STATUS.DANGER);
+						}
+					}
+				});
+			});
+			// --- Fim do script do menu de usuário ---
+
+			// Fixar navbar ao rolar 300px
+			$(window).on('scroll', function () {
+				if ($(window).scrollTop() > 300) {
+					$('#gen-header').addClass('fixed-navbar');
+				} else {
+					$('#gen-header').removeClass('fixed-navbar');
+				}
+			});
+
+			// Back to Top Button
+			var backToTopBtn = $('#back-to-top-btn');
+			$(window).on('scroll', function () {
+				if ($(window).scrollTop() > 300) {
+					backToTopBtn.addClass('show');
+				} else {
+					backToTopBtn.removeClass('show');
+				}
+			});
+			backToTopBtn.on('click', function (e) {
+				e.preventDefault();
+				$('html, body').animate({ scrollTop: 0 }, '300');
+			});
+		});
+	</script>
+
+	<!-- Back to Top Button -->
+	<a href="https://wrevolving.com/#" id="back-to-top-btn" class="">
+		<i class="bi bi-arrow-up"></i>
+	</a>
+
+
+<!-- <div aria-hidden="true" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px;
+border-radius: 4px; left: auto; top: -10000px; z-index: -2147483648; position: absolute; pointer-events: auto; transition: opacity 0.15s ease-out; opacity: 0;
+ visibility: hidden;"><div style="position: relative; z-index: 1;">
+  <iframe src="./hcaptcha(1).html" frameborder="0" scrolling="no" allow="private-state-token-redemption" title="Desafio hCaptcha" style="border: 0px;
+   z-index: 2000000000; position: relative;"></iframe></div><div style="width: 100%; height: 100%; position: fixed; pointer-events: none; top: 0px;
+    left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border-width: 11px; border-style: none; position: absolute;
+     pointer-events: none; margin-top: -11px; z-index: 1; right: 100%;"><div style="border-width: 10px; border-style: solid;
+      border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1;"></div>
+
+      <div style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0;"></div></div></div> -->
+
+</body></html>

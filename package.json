@@ -26,8 +26,7 @@
     "@myorg/core": "link:libs/core",
     "@myorg/events": "link:libs/events",
     "@nestjs/mapped-types": "^2.1.1",
-    "glob": "^13.0.6",
-    "vitest": "^4.1.8"
+    "glob": "^13.0.6"
   },
   "devDependencies": {
     "typescript": "^6.0.3"

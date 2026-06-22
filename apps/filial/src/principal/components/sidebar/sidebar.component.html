@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto px-0">
+            <div id="sidebar" class="collapse collapse-horizontal show border-end">
+                <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-95">
+                    <a href="home" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Dashboard</span> </a>
+                    <a href="home/organizations" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Organizações</span> </a>
+                    <a href="home/projects" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Projetos</span> </a>
+                    <a href="home/services" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Serviços</span> </a>
+                    <a href="home/products" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Produtos</span> </a>
+                    <a href="home/customers" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Clientes</span> </a>
+                    <a href="home/users" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Usuários</span> </a>
+                    <a href="home/settings" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Configurações</span> </a>
+                    <a href="access" class="list-group-item border-end-0 d-inline-block text-truncate" (click)="onExit()" data-bs-parent="#sidebar"><span>Sair</span> </a>
+                </div>
+            </div>
+        </div>
+        <main class="col ps-md-2 pt-2">
+            <div class="row">
+                <div class="col-12">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

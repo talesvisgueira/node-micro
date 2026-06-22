@@ -1,0 +1,27 @@
+<p>LISTA DE ORGANIZAÇÕES</p>
+
+ <div class="table-responsive vh-60">
+      <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Sigla</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+            @for (unidade of listaUnidades(); track unidade.id) {
+            <tr>
+                <td>{{ unidade.id }}</td>
+                <td>{{ unidade.sigla }}</td>
+                <td>{{ unidade.nome }}</td>
+                <td>
+                    <i class="bi bi-pen me-3" role="button" ngbTooltip="Editar" (click)="editar(unidade)" ></i>
+                    <i class="bi bi-trash" role="button" ngbTooltip="Excluir" (click)="deletar(unidade.id)"></i>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

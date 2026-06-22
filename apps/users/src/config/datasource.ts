@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
     port: Number(process.env.DB_PORT) || 5305,
     database: process.env.DB_DATABASE || 'user_db',
     username: process.env.DB_USERNAME || 'postgres',
-    password: process.env.DB_PASSWORD|| 'postgres',
+    password: process.env.DB_PASSWORD || 'postgres',
     
     synchronize: true, 
     migrationsRun: true,

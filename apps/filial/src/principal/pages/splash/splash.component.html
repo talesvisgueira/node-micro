@@ -1,0 +1,16 @@
+<form action="action_page.php" method="post">
+  @if (showSplash) {
+    <div class="app-splash-screen"
+     [ngStyle]="{
+        left: windowWidth,
+        opacity: opacityChange,
+        transition: splashTransition
+    }">
+      <div class="app-splahs-screen-inner">
+        <div class="app-logo" > Sistema para Engenharia de Software </div>
+        <div class="app-label"> OpenSWES </div>
+        <div class="app-loader">  </div>
+      </div>
+    </div>
+  }
+</form>

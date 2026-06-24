@@ -7,8 +7,8 @@ import * as amqp from 'amqplib';
 export class EventMessageService implements OnModuleInit, OnModuleDestroy {
 
     private readonly logger = new Logger(EventMessageService.name);
-    private connection: amqp.ChannelModel ;
-    private channel: amqp.Channel ;
+    private connection!: amqp.ChannelModel ;
+    private channel!: amqp.Channel ;
 
     constructor(private readonly configService: ConfigService){}
 

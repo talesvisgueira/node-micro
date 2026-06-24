@@ -13,5 +13,6 @@ allowBuilds:
 
 catalog:
   '@myorg/events': 'libs/events'
+  '@myorg/core': 'libs/core'
 
 injectWorkspacePackages: true

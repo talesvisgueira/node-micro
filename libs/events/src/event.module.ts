@@ -3,9 +3,7 @@ import { EventMessageService } from './event.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
-  imports: [ConfigModule.forRoot({
-      isGlobal: true,
-    }),ConfigModule],
+  imports: [ConfigModule],
   providers: [EventMessageService,ConfigService],
   exports: [EventMessageService]
 })

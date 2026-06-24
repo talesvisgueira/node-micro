@@ -25,6 +25,8 @@
     "migration:status": "pnpm run typeorm migration:status -- -d ./src/config/datasource.config.ts"
   },
   "dependencies": {
+    "@myorg/core": "link:../../libs/core",
+    "@myorg/events": "link:../../libs/events",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.4",
     "@nestjs/core": "^11.0.1",

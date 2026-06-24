@@ -9,9 +9,9 @@ import {
 } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { ErrorDialogComponent } from '../principal/components/error-dialog/error-dialog.component';
+import { ErrorDialogComponent } from '../components/error-dialog/error-dialog.component';
 import { Router } from '@angular/router';
- 
+
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {

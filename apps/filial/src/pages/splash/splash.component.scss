@@ -36,7 +36,7 @@
 }
 
 .app-loader {
-    background: url(../../../../public/img/favicon.ico);
+    background: url('@/src/assert/favicon.ico');
     background-repeat: no-repeat;
     max-width: 400%;
     background-position: center;

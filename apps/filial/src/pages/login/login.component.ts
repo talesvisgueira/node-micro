@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../../../services/LoginService';
-//'libs/interfaces/src/encrypts/encript.model';
+import { LoginService } from '@/src/services/LoginService';
+
 import { Encriptor } from '@myorg/core/src/encrypts/Encriptor';
 
-import { LocalStorageService } from '../../../services/LocalStorageService';
+import { LocalStorageService } from '@/src/services/LocalStorageService';
 import * as CryptoJS from 'crypto-js';
+import { EncriptorModule } from '@myorg/core/dist/encrypts/encript.model';
 
 
 @Component({

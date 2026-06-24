@@ -32,21 +32,12 @@
             ],
             "styles": [
               "src/styles.scss",
-              "public/css/bootstrap-toaster.min.css",
-              "public/css/bootstrap.min.css",
-              "public/css/magnific-popup.css",
-              "public/css/owl.carousel.css",
-              "public/css/site-public-layout.css",
-              "public/css/style.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
 
             ],
             "scripts": [
-              "public/js/api.js",
-              "public/js/bootstrap-toaster.min.js",
-              "public/js/bootstrap.bundle.min.js",
-              "public/js/jquery-3.7.1.min.js",
-              "public/js/jquery.magnific-popup.min.js",
-              "public/js/owl.carousel.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
             ]
           },
           "configurations": {

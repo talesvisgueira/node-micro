@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'
 import { Component, inject, Input, ViewEncapsulation } from '@angular/core';
 import { SplashAnimationType } from './splash-animation-type';
 import { Router } from '@angular/router';
-import { LocalStorageService } from '../../../services/LocalStorageService';
+import { LocalStorageService } from '@/src/services/LocalStorageService'
 
 @Component({
   selector: 'app-splash',

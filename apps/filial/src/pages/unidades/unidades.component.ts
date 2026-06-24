@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
  
 import { Observable, Subscription } from 'rxjs';
-import { UnidadeService } from '../../../services/UnidadeService';
+import { UnidadeService } from '@/src/services/UnidadeService';
 
 
 

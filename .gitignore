@@ -4,6 +4,12 @@
 /build
 /tmp
 
+# dotenv environment variable files
+.env
+.env.development
+.env.test
+.env.production
+
 # Logs
 logs
 *.log
@@ -23,11 +29,8 @@ libs/**/node_modules
 libs/**/build
 libs/**/tmp
 
-# dotenv environment variable files
-.env
-.env.development
-.env.test
-.env.production
+# build.info
+libs/**/*.tsbuildinfo
 
 # temp directory
 .temp

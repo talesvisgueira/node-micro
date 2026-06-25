@@ -63,13 +63,17 @@ Mais informações no link **[openALM.com](https://openalm.com)**.
 ### INSTALAÇÃO
 
 ```sh
-pnpm install 
+pnpm install
+```
+
+```sh
+pnpm build
 ```
 
 ### INICIALIZAR
 
 ```sh
-pnpm start 
+pnpm start
 ```
 
 ## MÓDULOS DO SISTEMA

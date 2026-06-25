@@ -26,6 +26,7 @@ Este projeto está licenciado sobre a licença MIT. Veja em [LICENSE](./docs/LIC
   - [DOCUMENTAÇÃO](#documentação)
   - [DEPENDÊNCIAS](#dependências)
     - [INSTALAÇÃO](#instalação)
+    - [BUILDS DAS LIBS E APLICAÇÕES](#builds-das-libs-e-aplicações)
     - [INICIALIZAR](#inicializar)
   - [MÓDULOS DO SISTEMA](#módulos-do-sistema)
   - [CONTRIBUIÇÕES](#contribuições)
@@ -66,8 +67,12 @@ Mais informações no link **[openALM.com](https://openalm.com)**.
 pnpm install
 ```
 
+### BUILDS DAS LIBS E APLICAÇÕES
+
 ```sh
-pnpm build
+pnpm pnpm --filter "./libs/**" run build
+
+pnpm pnpm --filter web run build
 ```
 
 ### INICIALIZAR

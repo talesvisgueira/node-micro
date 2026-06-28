@@ -21,7 +21,8 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-        "@myorg/logger": ["./node_modules/@myorg/logger/src/index"],
-      },
+      "@/*": ["./*"],
+      "@myorg": ["../../node_modules/@myorg"],
+    },
   }
 }

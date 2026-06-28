@@ -14,10 +14,12 @@ export class HealthService {
       status: 'ok',
       timestamp: new Date().toISOString(),
       services: {
+        organizations: await this.proxyService.getServiceHealth('organizations'),
         users: await this.proxyService.getServiceHealth('users'),
         products: await this.proxyService.getServiceHealth('products'),
         checkout: await this.proxyService.getServiceHealth('checkouts'),
         payments: await this.proxyService.getServiceHealth('payments'),
+        loggers: await this.proxyService.getServiceHealth('loggers'),
       },
     }
   }

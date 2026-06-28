@@ -67,6 +67,7 @@ async function bootstrap() {
       API Gateway for Markatplace microservice
 
       Serviços disponíveis:
+      - Organizations Services**: Organizações e gestão de pessoal.
       - Users Services**: Autenticação e gestão de usuários.
       - Products Services: Catálogo de produtos.
       - Checkout Services: Carrinho e processamento de pedidos.
@@ -80,6 +81,7 @@ async function bootstrap() {
     .setLicense('MIT','<https://organicacao.com/licenca>')
     .addBearerAuth()
     .addTag('Authentication','Autenticação e autorização dos usuários')
+    .addTag('Organizations','Gestão das organizações')
     .addTag('Users','Gestão dos usuários')
     .addTag('Products','Gestão dos usuários')
     .addTag('Checkouts','Carrinho de pedidos')

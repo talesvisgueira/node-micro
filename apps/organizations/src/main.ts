@@ -27,7 +27,7 @@ async function bootstrap() {
 
   await app.listen(port);
 
-  logger.warn(`Microserviço 'Users' ativo na porta: ${port}`);
+  logger.warn(`Microserviço 'Organizations' ativo na porta: ${port}`);
 
 }
 bootstrap();

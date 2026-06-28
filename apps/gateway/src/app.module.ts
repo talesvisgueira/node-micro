@@ -6,12 +6,13 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { ProxyModule } from './proxy/proxy.module';
 import { MiddlewareModule } from './middleware/middleware.module';
 import { LoggingMiddleware } from './middleware/logging.middleware';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from './controllers/auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { CustomThrottlerGuard } from './guards/throttler.guard';
 import { MetricsController } from './metrics/metrics.controller';
 import { MetricsService } from './metrics/metrics.service';
 import { MetricsModule } from './metrics/metrics.module';
+import { OrganizationsModule } from './controllers/organizations/organizations.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { MetricsModule } from './metrics/metrics.module';
     MiddlewareModule,
     AuthModule,
     MetricsModule,
+    OrganizationsModule,
   ],
   controllers: [HealthController, MetricsController],
   providers: [

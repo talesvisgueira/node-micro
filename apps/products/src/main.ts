@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const logger = new Logger("MS-Products");
 
-  const port = process.env.PORT ?? 3002;
+  const port = process.env.PORT ?? 3003;
   await app.listen(port);
 
   logger.warn(`Microserviço 'Products' ativo na porta: ${port}`);

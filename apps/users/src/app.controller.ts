@@ -21,9 +21,7 @@ export class AppController {
 
   @Post("/login")
   async login(@Body() body) {
-    
       return this.appService.login(body);
-    
   }
 
   @Post("/register")

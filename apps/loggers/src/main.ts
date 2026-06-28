@@ -8,9 +8,9 @@ import 'reflect-metadata'
 
 async function bootstrap() {
   const logger = new Logger("MS-Glogger");
-  const port = process.env.PORT ?? 3005;
+  const port = process.env.PORT ?? 3009;
   const database = process.env.DB_DATABASE ?? 'postgres';
-  const db_porta = process.env.DB_PORT ?? 3505;
+  const db_porta = process.env.DB_PORT ?? 3501;
 
   const app = await NestFactory.create(AppModule);
 

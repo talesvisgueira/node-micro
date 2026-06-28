@@ -21,7 +21,7 @@ export class AppController {
 
   @Get("/code")
   async login(@Body() body) {
-      this.appService.create(body);
+      
       return {
       status: 'ok',
       timestamp: new Date().toISOString(),
@@ -31,6 +31,7 @@ export class AppController {
 
   @Post("/create")
   async register(@Body() body) {
+    this.appService.create(body);
     return {
       status: 'ok',
       timestamp: new Date().toISOString(),

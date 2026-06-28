@@ -27,7 +27,9 @@ Este projeto está licenciado sobre a licença MIT. Veja em [LICENSE](./docs/LIC
   - [DEPENDÊNCIAS](#dependências)
     - [INSTALAÇÃO](#instalação)
     - [BUILDS DAS LIBS E APLICAÇÕES](#builds-das-libs-e-aplicações)
-    - [INICIALIZAR](#inicializar)
+    - [INSTALAR POSTGRES, RABBITMQ, PROMETEUS E GRAFANA](#instalar-postgres-rabbitmq-prometeus-e-grafana)
+    - [CONFIGURAR O ACESSO AOS BD E RABBITMQ](#configurar-o-acesso-aos-bd-e-rabbitmq)
+    - [INICIALIZAR APLICAÇÕES](#inicializar-aplicações)
   - [MÓDULOS DO SISTEMA](#módulos-do-sistema)
   - [CONTRIBUIÇÕES](#contribuições)
 
@@ -75,7 +77,15 @@ pnpm pnpm --filter "./libs/**" run build
 pnpm pnpm --filter web run build
 ```
 
-### INICIALIZAR
+### INSTALAR POSTGRES, RABBITMQ, PROMETEUS E GRAFANA
+
+```sh
+docker compose up -d
+```
+
+### CONFIGURAR O ACESSO AOS BD E RABBITMQ
+
+### INICIALIZAR APLICAÇÕES
 
 ```sh
 pnpm start

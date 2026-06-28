@@ -2,7 +2,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
-import {AppDataSource} from "./config/datasource.config.js"
+import {AppDataSource} from "./config/datasource.js"
 import 'reflect-metadata'
 
 

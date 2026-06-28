@@ -5,27 +5,27 @@ import { Column,
         PrimaryColumn,
         UpdateDateColumn } from "typeorm";
 
-@Entity('tb_mensagem')
-export class Audit {
-    
+@Entity('tb_person')
+export class Person {
+
     @PrimaryColumn()
     @IsNotEmpty()
-    id: string;
+    id!: string;
+
+    @Column({ length: 14 })
+    code!: string;
 
     @Column({ length: 100 })
-    origem: string;
+    name!: string;
 
     @Column({ length: 100 })
-    acao: string;
-
-    @Column({ length: 1000 })
-    mensagem: string;
+    email!: string;
 
     @CreateDateColumn()
-    created_at: Date;
+    created_at!: Date;
 
     @UpdateDateColumn()
-    updated_at: Date;
+    updated_at!: Date;
 
-  
+
 }

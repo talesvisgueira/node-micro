@@ -5,5 +5,8 @@ export class CreateAuditDto {
     origem: string;
 
     @IsString()
+    acao: string;
+
+    @IsString()
     mensagem: string;
 }

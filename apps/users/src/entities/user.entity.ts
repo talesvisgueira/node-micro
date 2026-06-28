@@ -6,26 +6,26 @@ import { Column,
         UpdateDateColumn } from "typeorm";
 
 @Entity('tb_user')
-export class Audit {
-    
+export class User {
+
     @PrimaryColumn()
     @IsNotEmpty()
-    id: string;
+    id!: string;
 
     @Column({ length: 100 })
-    email: string;
+    email!: string;
 
     @Column({ length: 100 })
-    nome: string;
+    name!: string;
 
     @Column({ length: 100 })
-    senha: string;
+    password!: string;
 
     @CreateDateColumn()
-    created_at: Date;
+    created_at!: Date;
 
     @UpdateDateColumn()
-    updated_at: Date;
+    updated_at!: Date;
 
-  
+
 }

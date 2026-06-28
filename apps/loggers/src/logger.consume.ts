@@ -1,5 +1,4 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
-import { EventMessageService } from '@myorg/events/dist/event.service'
 import { LoggerQueueService } from './logger.service';
 import { CreateAuditDto } from './audit/dto/create-audit.dto';
 import { AuditService } from './audit/audit.service';
@@ -43,11 +42,12 @@ export class LoggerConsumerService {
 
             const payload: string = JSON.stringify(message);
             this.logger.log(`Payload: ${message}`);
-            const {origem,mensagem} =  message  ;
+            const {origem,acao,mensagem} =  message  ;
             this.logger.log(`Origem: ${origem} - Message: ${mensagem}`);
-           
+
             let dto: CreateAuditDto = new CreateAuditDto();
             dto.origem = origem;
+            dto.acao = acao;
             dto.mensagem = mensagem;
             await this.auditService.create(dto);
 

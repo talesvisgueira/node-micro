@@ -14,7 +14,14 @@ export class RegisterUserDto {
         description: '',
         example: ''
     })
-    email: string;
+    email!: string;
+
+    @IsString()
+    @ApiProperty({
+        description: '',
+        example: '',
+    })
+    name!: string;
 
     @IsString()
     @MinLength(6)
@@ -23,27 +30,14 @@ export class RegisterUserDto {
         example: '',
         minLength: 6
     })
-    password: string;
+    password!: string;
+
 
     @IsString()
     @ApiProperty({
         description: '',
         example: '',
-    })
-    fistName: string;
-
-    @IsString()
-    @ApiProperty({
-        description: '',
-        example: '',
-    })
-    lastName: string;
-
-    @IsString()
-    @ApiProperty({
-        description: '',
-        example: '',
-        enum: ['user','admin','seller']
+        enum: ['ADMIN','VENDEDOR','USUARIO']
     })
     role?: Role = Role.USER;
 }

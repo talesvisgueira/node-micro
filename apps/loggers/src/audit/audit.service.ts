@@ -1,10 +1,10 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { CreateAuditDto } from './dto/create-audit.dto';
+import { CreateAuditDto } from '@/src/audit/dto/create-audit.dto';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Audit } from '../entities/audit.entity';
-import { AppDataSource } from '../config/datasource.config';
-import {v4 as uuidv4} from 'uuid';  
+import { Audit } from '@/src/entities/audit.entity';
+import { AppDataSource } from '@/src/config/datasource';
+import {v4 as uuidv4} from 'uuid';
 import { Timestamp } from 'typeorm/driver/mongodb/bson.typings.js';
 
 @Injectable()
@@ -18,21 +18,22 @@ export class AuditService {
   async create(dto: CreateAuditDto): Promise<Audit | null> {
     const auditRepository = AppDataSource.getRepository(Audit)
     if (auditRepository) {
-      this.logger.log(`Gravando a mensagem: ${dto.origem} - ${dto.mensagem}`);
-      
+      this.logger.log(`Gravando a mensagem: ${dto.origem} - ${dto.acao} - ${dto.mensagem}`);
+
       let entity = new Audit();
       entity.id =  uuidv4();
       entity.origem = dto.origem;
+      entity.acao = dto.acao;
       entity.mensagem = dto.mensagem;
       entity.created_at = new Date();
       entity.updated_at = new Date();
       auditRepository.save(entity);
-      this.logger.warn(`Entity persitida em: ${entity.created_at}`);
-      
+      this.logger.warn(`Logger persitido em: ${entity.created_at}`);
+
       return entity;
-    } 
+    }
     return null;
-    
+
   }
 
   // async findAll(): Promise<Audit[]> {

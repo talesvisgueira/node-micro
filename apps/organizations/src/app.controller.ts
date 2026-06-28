@@ -19,17 +19,23 @@ export class AppController {
     }
   }
 
-  @Post("/login")
+  @Get("/code")
   async login(@Body() body) {
-    
-      return this.appService.login(body);
-    
+      this.appService.create(body);
+      return {
+      status: 'ok',
+      timestamp: new Date().toISOString(),
+    }
+
   }
 
-  @Post("/register")
+  @Post("/create")
   async register(@Body() body) {
-    return this.appService.register(body)
+    return {
+      status: 'ok',
+      timestamp: new Date().toISOString(),
+    }
   }
 
-  
+
 }

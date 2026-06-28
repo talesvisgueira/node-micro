@@ -66,6 +66,19 @@ export class EventMessageService implements OnModuleInit, OnModuleDestroy {
         }
     }
 
+    async sendEvent(exchange: string, routeKey, origem: string,  event: string, dto: unknown) {
+        try {
+            await this.publishMessage(
+                exchange,
+                routeKey,
+                {origem: origem, acao: event, mensagem: dto}
+            );
+            this.logger.log('Message sending success from queue.');
+        } catch(error) {
+            this.logger.error('Error sending Message from queue.', error);
+        }
+    }
+
     async publishMessage(exchange: string, routingKey: string, message: any) {
         try {
             if (!this.channel) {

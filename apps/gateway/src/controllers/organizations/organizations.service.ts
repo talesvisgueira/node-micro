@@ -3,7 +3,7 @@ import { ConflictException, Injectable, Logger, UnauthorizedException } from '@n
 import { JwtService } from '@nestjs/jwt';
 import { firstValueFrom } from 'rxjs';
 import { serviceConfig } from '@/src/config/gateway.config';
-import { OrganizationRequest } from '@myorg/core/src/interfaces/organizationRequest';
+import { OrganizationCreateRequest } from '@myorg/core/dist/interfaces/organizationCreateRequest';
 
 
 @Injectable()
@@ -18,7 +18,7 @@ export class OrganizationsService {
         this.logger.warn(`Prerparando para salvar a pessoa: ${organizationRequest.name}` );
         try {
             const { data } = await firstValueFrom(
-                this.httpService.post<OrganizationRequest>(
+                this.httpService.post<OrganizationCreateRequest>(
                     `${serviceConfig.organizations.url}/create`,organizationRequest,
                     {
                         timeout: serviceConfig.users.timeout,

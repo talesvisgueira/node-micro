@@ -4,7 +4,7 @@ import { EventMessageService } from '@myorg/events/dist/event.service';
 import { Person } from '@/src/entities/person.entity';
 import {v4 as uuidv4} from 'uuid';
 import { Repository } from 'typeorm';
-import { OrganizationRequest } from '@myorg/core/dist/interfaces/organizationRequest';
+import { OrganizationCreateRequest } from '@myorg/core/dist/interfaces/organizationCreateRequest';
 
 @Injectable()
 export class AppService {
@@ -23,7 +23,7 @@ export class AppService {
     return `Hello World ${this.SOURCE}`;
   }
 
-  async create(personRequest: OrganizationRequest){
+  async create(personRequest: OrganizationCreateRequest){
     this.logger.warn(`Cadastrando person ${personRequest.code} - ${personRequest.name}`);
     if (this.repository) {
         const person: Person | null = await this.repository.findOneBy({code: personRequest.code});

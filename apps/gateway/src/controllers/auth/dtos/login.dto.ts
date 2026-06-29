@@ -8,7 +8,7 @@ export class LoginDto {
         description: '',
         example: ''
     })
-    email: string;
+    email!: string;
 
     @IsString()
     @MinLength(6)
@@ -17,5 +17,5 @@ export class LoginDto {
         example: '',
         minLength: 6
     })
-    password: string;
+    password!: string;
 }

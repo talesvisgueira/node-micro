@@ -1,9 +1,10 @@
+import { Throttle } from '@nestjs/throttler';
 import { Controller, Body, HttpCode, HttpStatus, Post } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { AuthService } from './auth.service';
-import { Throttle } from '@nestjs/throttler';
-import { LoginDto } from './dtos/login.dto';
-import { RegisterUserDto } from './dtos/registerUser.dto';
+import { AuthService } from '@/src/controllers/auth//auth.service';
+import { LoginDto } from '@/src/controllers/auth/dtos/login.dto';
+import type { UserCreateRequest } from '@myorg/core/dist/interfaces/userCreateRequest';
+import { UserCreateDto } from '@/src/controllers/auth/dtos/UserCreate.dto';
 
 @ApiTags('Authentication')
 @Controller('auth')
@@ -40,10 +41,10 @@ export class AuthController {
     @ApiOperation({ summary: 'Register a new user',
         description: 'Cria um nova conta de usuário no sistema.'
     })
-    @ApiResponse({ status: 201, description: 'User registered successfully' })
-    @ApiResponse({ status: 400, description: 'Dados inválidos' })
-    @ApiResponse({ status: 409, description: 'Email já cadastrado.' })
-    async register(@Body() registerDto: RegisterUserDto) {
+    // @ApiResponse({ status: 201, description: 'User registered successfully' })
+    // @ApiResponse({ status: 400, description: 'Dados inválidos' })
+    // @ApiResponse({ status: 409, description: 'Email já cadastrado.' })
+    async register(@Body() registerDto: UserCreateDto) {
         return this.authService.register(registerDto);
     }
 }

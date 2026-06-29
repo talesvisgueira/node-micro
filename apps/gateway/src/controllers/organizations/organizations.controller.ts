@@ -1,9 +1,9 @@
 import { Controller, Body, HttpCode, HttpStatus, Get, Post, Logger } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Throttle } from '@nestjs/throttler';
-import type { OrganizationRequest } from '@myorg/core/src/interfaces/organizationRequest';
-import { OrganizationsService } from './organizations.service';
-import { RegisterUserDto } from '../auth/dtos/organizationCreateDto';
+import type { OrganizationCreateRequest } from '@myorg/core/dist/interfaces/organizationCreateRequest';
+import { OrganizationsService } from '@/src/controllers/organizations/organizations.service';
+import { OrganizationCreateDto } from '@/src/controllers/auth/dtos/OrganizationCreateDto';
 
 @Controller('organizations')
 export class OrganizationsController {
@@ -45,7 +45,7 @@ export class OrganizationsController {
     @ApiResponse({ status: 201, description: 'User registered successfully' })
     @ApiResponse({ status: 400, description: 'Dados inválidos' })
     @ApiResponse({ status: 409, description: 'Email já cadastrado.' })
-    async register(@Body()  organizationRequest: RegisterUserDto) {
+    async register(@Body()  organizationRequest: OrganizationCreateDto) {
         this.logger.warn("Iniciando operação...");
         
         this.service.save(organizationRequest);

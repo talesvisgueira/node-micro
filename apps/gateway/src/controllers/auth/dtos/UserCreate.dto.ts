@@ -1,5 +1,7 @@
+
 import { ApiProperty } from "@nestjs/swagger";
 import { IsEmail, IsString, MinLength } from "class-validator";
+import { UserCreateRequest } from "@myorg/core/dist/interfaces/userCreateRequest";
 
  enum Role {
         USER = 'user',
@@ -7,14 +9,14 @@ import { IsEmail, IsString, MinLength } from "class-validator";
         SELLER = 'seller'
     }
 
-export class RegisterUserDto {
+export class UserCreateDto implements UserCreateRequest {
 
-    @IsEmail()
+    @IsString()
     @ApiProperty({
         description: '',
         example: ''
     })
-    email!: string;
+    code!: string;
 
     @IsString()
     @ApiProperty({
@@ -22,6 +24,13 @@ export class RegisterUserDto {
         example: '',
     })
     name!: string;
+
+    @IsEmail()
+    @ApiProperty({
+        description: '',
+        example: ''
+    })
+    email!: string;
 
     @IsString()
     @MinLength(6)

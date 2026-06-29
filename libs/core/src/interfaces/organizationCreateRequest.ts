@@ -1,5 +1,5 @@
 
-export interface OrganizationRequest {
+export interface OrganizationCreateRequest {
 
     code: string;
     name: string;

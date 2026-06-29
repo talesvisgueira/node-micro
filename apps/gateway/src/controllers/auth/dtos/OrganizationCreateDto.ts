@@ -1,8 +1,10 @@
+
 import { ApiProperty } from "@nestjs/swagger";
 import { IsEmail, IsString, MinLength } from "class-validator";
+import { OrganizationCreateRequest } from "@myorg/core/dist/interfaces/organizationCreateRequest";
 
 
-export class RegisterUserDto {
+export class OrganizationCreateDto implements OrganizationCreateRequest{
 
 
     @IsString()

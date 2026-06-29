@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerQueueService } from './logger.service';
 import { LoggerConsumerService } from './logger.consume';
-import { MetricsModule } from './metrics/metrics.module';
+import { MetricsModule } from '@myorg/core/dist/metrics/metrics.module';
 import { AuditModule } from './audit/audit.module';
 import { AuditService } from './audit/audit.service';
 import { AuditController } from './audit/audit.controller';

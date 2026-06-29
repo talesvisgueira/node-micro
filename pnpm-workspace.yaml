@@ -5,6 +5,7 @@ allowBuilds:
   '@nestjs/core': true
   '@parcel/watcher': false
   '@scarf/scarf': false
+  bcrypt: true
   esbuild: true
   lmdb: false
   msgpackr-extract: false

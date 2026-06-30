@@ -7,7 +7,7 @@ import type { UserCreateRequest } from '@myorg/core/dist/interfaces/userCreateRe
 import { UserCreateDto } from '@/src/controllers/auth/dtos/UserCreate.dto';
 
 @ApiTags('Authentication')
-@Controller('auth')
+@Controller('api')
 export class AuthController {
     constructor(private readonly authService: AuthService) { }
 

@@ -7,6 +7,8 @@ import { Repository } from 'typeorm';
 import { UserCreateRequest } from '@myorg/core/dist/interfaces/userCreateRequest';
 // import { bcrypt } from 'bcryptjs'
 import { ConsumerMetrics } from '../../../libs/core/dist/interfaces/consumerMetrics';
+import { UserLoginRequest } from '@myorg/core/dist/interfaces/userLoginRequest';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AppService {
@@ -31,7 +33,9 @@ export class AppService {
   // private totalProcessingTime = 0;
 
 
-  constructor(private readonly eventMessageService: EventMessageService) {
+  constructor(private readonly eventMessageService: EventMessageService,
+              private readonly jwtService: JwtService
+  ) {
     this.repository = AppDataSource.getRepository(User);
   }
 
@@ -39,9 +43,9 @@ export class AppService {
     return 'Hello World Users!';
   }
 
-  async login(loginDto: { email: string, password: string}){
+  async login(loginDto: UserLoginRequest){
     if (this.repository) {
-        const entity: User | null = await this.repository.findOneBy({email: loginDto.email});
+        const entity: User | null = await this.repository.findOneBy({email: loginDto.username});
         if (!entity) throw new UnauthorizedException('Usuário não cadastrado.');
         this.logger.warn(`Usuario localizado no BD com a senha ${entity.password}`);
         // if (entity.password !== loginDto.password) throw new ForbiddenException('Senha do usuário inválida.');
@@ -49,12 +53,42 @@ export class AppService {
         if (!isMatch) throw new ForbiddenException('Senha do usuário inválida.');
         this.logger.warn(`Senha do usuario verificado ....(OK)`);
         this.eventMessageService.sendEvent(this.EXCHANGE,this.ROUTING_KEY,this.SOURCE,'sucesso-autenticação',loginDto);
+        const userToken = await this.createTokenJWT(entity.id,entity.email, entity.name,'ADMIN','127.0.0.0');
         return {
           status: 'User login ..OK',
           timestamp: new Date().toISOString(),
+          user: entity.id,
+          name: entity.name,
+          peril: 'ADMIN',
+          token: userToken
         }
     }
 
+  }
+
+  private async createTokenJWT (id: string, username: string, nome: string, perfil: string, host_ip?: string) {
+    // return this.jwtService.sign({ id:id, nome:"TALES A B VISGUEIRA" });
+    console.log("Creating token:", process.env.JWT_SECRET);
+    return await this.jwtService.signAsync({ sub: id, username: username, nome: nome, perfil: perfil, hostIP:host_ip },{
+      secret: process.env.JWT_SECRET,
+      expiresIn: Number(process.env.EXPIRES) || 300,
+      });
+  }
+
+  async checkToken(token: string,hostIp:string): Promise<boolean> {
+    try {
+      var hash: string = token.replace('Bearer ', '');
+      // console.log("Checking token:",  this.jwtService.decode(hash) );
+      const decoded = this.jwtService.decode(hash) as { [key: string]: any };
+      if (decoded['hostIP'] !== hostIp) {
+        console.log("Host IP inválido:", decoded['hostIP'], hostIp);
+        return false;
+      }
+      this.jwtService.verify( hash, {secret: process.env.JWT_SECRET,});
+      return true;
+    } catch (err) {
+      return false;
+    }
   }
 
   async register(userRequest:  UserCreateRequest ){

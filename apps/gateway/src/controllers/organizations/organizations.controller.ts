@@ -5,7 +5,9 @@ import type { OrganizationCreateRequest } from '@myorg/core/dist/interfaces/orga
 import { OrganizationsService } from '@/src/controllers/organizations/organizations.service';
 import { OrganizationCreateDto } from '@/src/controllers/auth/dtos/OrganizationCreateDto';
 
-@Controller('organizations')
+
+@ApiTags('Organizations')
+@Controller('api/organizadions')
 export class OrganizationsController {
 
     private readonly logger = new Logger(OrganizationsController.name);

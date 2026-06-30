@@ -3,6 +3,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { firstValueFrom } from 'rxjs';
 import { serviceConfig } from '@/src/config/gateway.config';
+import { UserLoginRequest } from '@myorg/core/dist/interfaces/userLoginRequest';
 
 export interface UserSession {
     valid: boolean;
@@ -38,7 +39,7 @@ export class AuthService {
         }
     }
 
-    async login(loginDto: {email: string, password: string}): Promise<any> {
+    async login(loginDto: UserLoginRequest): Promise<any> {
         try {
             const { data } = await firstValueFrom(
                 this.httpService.post<UserSession>(

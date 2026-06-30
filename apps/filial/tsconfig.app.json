@@ -8,7 +8,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+,       "../../libs/core/src/interfaces/userLoginRequest.ts",       "../../libs/core/src/interfaces/userLoginRequest.ts"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]

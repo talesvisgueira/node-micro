@@ -28,8 +28,8 @@ export class LoginComponent {
     constructor(private router:Router) {}
 
     loginForm: FormGroup = new FormGroup({
-      username: new  FormControl("tales",[Validators.required,Validators.minLength(5)]),
-      password: new FormControl("taver5cea8!",[Validators.required,Validators.minLength(8)])
+      username: new  FormControl("tales@gmail.com",[Validators.required,Validators.minLength(5)]),
+      password: new FormControl("taver5cea8",[Validators.required,Validators.minLength(8)])
     })
 
     onCancel() {

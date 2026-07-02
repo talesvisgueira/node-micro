@@ -27,7 +27,7 @@ export class UnidadeService {
 
 
     listarUnidades(): Observable<any> {
-        return this.http.get<Unidade[]>(`${environment.apiUrl}}/unidades`, this.buscarHttpHeader());
+        return this.http.get<Unidade[]>(`${environment.apiUrl}/organizations`, this.buscarHttpHeader());
     }
 
 }

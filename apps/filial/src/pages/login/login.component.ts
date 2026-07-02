@@ -2,13 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '@/src/services/LoginService';
-
-import { Encriptor } from '@myorg/core/src/encrypts/Encriptor';
-
 import { LocalStorageService } from '@/src/services/LocalStorageService';
-import * as CryptoJS from 'crypto-js';
-import { EncriptorModule } from '@myorg/core/dist/encrypts/encript.model';
-
 
 @Component({
   selector: 'app-login',
@@ -42,12 +36,6 @@ export class LoginComponent {
     onSubmit() {
 
       const request = this.loginForm.value;
-      var encriptor:Encriptor = new Encriptor;
-      const cipherText = encriptor.encrypt(request.password.toString());
-      console.log('Senha: ', request.password  );
-      console.log('Criptografada: ', cipherText.toString()  );
-      console.log('Descriptografado: ',  encriptor.decrypt(cipherText.toString()).toString(CryptoJS.enc.Utf8)  );
-
       this.localStorageService.limparLocalStorage();
       this.loginService.login(request).subscribe( result => {
           this.isLoginValid = true;

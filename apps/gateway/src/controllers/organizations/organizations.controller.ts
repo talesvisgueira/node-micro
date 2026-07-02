@@ -4,10 +4,11 @@ import { Throttle } from '@nestjs/throttler';
 import type { OrganizationCreateRequest } from '@myorg/core/dist/interfaces/organizationCreateRequest';
 import { OrganizationsService } from '@/src/controllers/organizations/organizations.service';
 import { OrganizationCreateDto } from '@/src/controllers/auth/dtos/OrganizationCreateDto';
+import { identity } from 'rxjs';
 
 
 @ApiTags('Organizations')
-@Controller('api/organizadions')
+@Controller('api/organizations')
 export class OrganizationsController {
 
     private readonly logger = new Logger(OrganizationsController.name);
@@ -20,22 +21,8 @@ export class OrganizationsController {
     @ApiOperation({summary: 'Busca todas organizações',
         description: 'Busca lista de organizações existentes.'
     })
-    @ApiResponse({
-        status: 200,
-        description: 'User logged in successfully',
-        schema: {
-            type: 'object',
-            properties: {
-                user: { type: 'object'},
-                accessToken: { type: 'string'},
-                sessionToken: { type: 'string'},
-                expiresIn: { type: 'number'},
-            }
-        }
-    })
-    @ApiResponse({ status: 401, description: 'Invalid credentials' })
     async getAll() {
-
+        return [{id: 1,sigla: 'aaaa', nome: 'aaaaaaaaaa'},{id: 2,sigla: 'bbbbb', nome: 'bbbbbbbbbbb'}]
     }
 
     @Post('/create')

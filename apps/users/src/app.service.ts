@@ -9,6 +9,8 @@ import { UserCreateRequest } from '@myorg/core/dist/interfaces/userCreateRequest
 import { ConsumerMetrics } from '../../../libs/core/dist/interfaces/consumerMetrics';
 import { UserLoginRequest } from '@myorg/core/dist/interfaces/userLoginRequest';
 import { JwtService } from '@nestjs/jwt';
+import { Encriptor } from '@myorg/core/dist/encrypts/Encriptor';
+import * as CryptoJS from 'crypto-js';
 
 @Injectable()
 export class AppService {
@@ -47,10 +49,11 @@ export class AppService {
     if (this.repository) {
         const entity: User | null = await this.repository.findOneBy({email: loginDto.username});
         if (!entity) throw new UnauthorizedException('Usuário não cadastrado.');
-        this.logger.warn(`Usuario localizado no BD com a senha ${entity.password}`);
-        // if (entity.password !== loginDto.password) throw new ForbiddenException('Senha do usuário inválida.');
-        const isMatch = await this.bcrypt.compare(loginDto.password, entity.password);
-        if (!isMatch) throw new ForbiddenException('Senha do usuário inválida.');
+
+        const passwordDecrypt = new Encriptor().decrypt(loginDto.password).toString(CryptoJS.enc.Utf8)  ;
+        const isMatch = await this.bcrypt.compare(passwordDecrypt, entity.password);
+        if (!isMatch) throw new ForbiddenException('Credencial do usuário inválida.');
+
         this.logger.warn(`Senha do usuario verificado ....(OK)`);
         this.eventMessageService.sendEvent(this.EXCHANGE,this.ROUTING_KEY,this.SOURCE,'sucesso-autenticação',loginDto);
         const userToken = await this.createTokenJWT(entity.id,entity.email, entity.name,'ADMIN','127.0.0.0');

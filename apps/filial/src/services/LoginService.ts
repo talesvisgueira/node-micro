@@ -5,6 +5,8 @@ import { environment } from '../environments/environment.development';
 import { UserLoginRequest } from '@myorg/core/dist/interfaces/userLoginRequest'
 import { Encriptor } from '@myorg/core/dist/encrypts/Encriptor';
 
+import { EncriptorModule } from '@myorg/core/dist/encrypts/encript.model';
+
 @Injectable({
   providedIn: 'root'
 })

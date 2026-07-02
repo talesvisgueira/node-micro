@@ -4,7 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule,NgbModule],
+  imports: [RouterModule,NgbModule,RouterOutlet],
   template: '<router-outlet></router-outlet>',
   // templateUrl: './app.html',
   // styleUrl: './app.scss'

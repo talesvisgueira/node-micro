@@ -1,21 +1,21 @@
 .sticky-header {
-    flex-grow: 0;
-    min-height: 60px; /* whatever you want it to be */
+  flex-grow: 0;
+  min-height: 60px; /* whatever you want it to be */
 }
 
 .content-wrapper {
-    flex-grow: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .footer {
-    min-height: 60px; /* whatever you want it to be */
-    flex-grow: 0;
+  min-height: 60px; /* whatever you want it to be */
+  flex-grow: 0;
 }

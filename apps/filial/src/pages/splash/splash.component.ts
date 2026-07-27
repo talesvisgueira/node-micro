@@ -1,4 +1,5 @@
 import { NgStyle } from '@angular/common';
+import * as dotenv from 'dotenv';
 import { CommonModule } from '@angular/common'
 import { Component, inject, Input, ViewEncapsulation } from '@angular/core';
 import { SplashAnimationType } from './splash-animation-type';
@@ -26,7 +27,14 @@ export class SplashComponent {
 
   localStorageService: LocalStorageService = inject(LocalStorageService);
 
-  constructor(public router:Router) { }
+  // SYSTEM_APP_NAME = APP_NAME;
+  // SYSTEM_APP_DESCRIPTION = APP_DESCRIPTION;
+  // SYSTEM_APP_SHORT_NAME = APP_SHORT_NAME;
+  // SYSTEM_APP_VERSION = APP_VERSION;
+
+  constructor(public router:Router) {
+
+  }
 
   ngOnInit(): void {
 

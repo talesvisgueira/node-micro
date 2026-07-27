@@ -70,8 +70,6 @@ export class AppService {
   }
 
   private async createTokenJWT (id: string, username: string, nome: string, perfil: string, host_ip?: string) {
-    // return this.jwtService.sign({ id:id, nome:"TALES A B VISGUEIRA" });
-    console.log("Creating token:", process.env.JWT_SECRET);
     return await this.jwtService.signAsync({ sub: id, username: username, nome: nome, perfil: perfil, hostIP:host_ip },{
       secret: process.env.JWT_SECRET,
       expiresIn: Number(process.env.EXPIRES) || 300,
@@ -81,7 +79,6 @@ export class AppService {
   async checkToken(token: string,hostIp:string): Promise<boolean> {
     try {
       var hash: string = token.replace('Bearer ', '');
-      // console.log("Checking token:",  this.jwtService.decode(hash) );
       const decoded = this.jwtService.decode(hash) as { [key: string]: any };
       if (decoded['hostIP'] !== hostIp) {
         console.log("Host IP inválido:", decoded['hostIP'], hostIp);

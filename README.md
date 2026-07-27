@@ -72,9 +72,9 @@ pnpm install
 ### BUILDS DAS LIBS E APLICAÇÕES
 
 ```sh
-pnpm pnpm --filter "./libs/**" run build
+pnpm --filter "./libs/**" run build
 
-pnpm pnpm --filter web run build
+pnpm --filter web run build
 ```
 
 ### INSTALAR POSTGRES, RABBITMQ, PROMETEUS E GRAFANA

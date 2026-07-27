@@ -4,6 +4,7 @@
   "cli": {
     "packageManager": "pnpm"
   },
+
   "newProjectRoot": "projects",
   "projects": {
     "filial": {

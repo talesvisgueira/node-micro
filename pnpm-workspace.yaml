@@ -9,6 +9,7 @@ allowBuilds:
   esbuild: true
   lmdb: false
   msgpackr-extract: false
+  node: false
   sharp: true
   unrs-resolver: false
 

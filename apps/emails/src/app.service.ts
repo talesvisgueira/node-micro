@@ -7,7 +7,6 @@ const SMTP_PORT = process.env.SMTP_PORT ?? 465
 const SMTP_USER = process.env.SMTP_USER ?? 'user@email.com.br'
 const SMTP_PASS = process.env.SMTP_PASS ?? 'password'
 
-
 @Injectable()
 export class AppService {
 
@@ -41,7 +40,7 @@ export class AppService {
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        this.logger.log('Erro ao enviar e-mail: ' + error);
+        this.logger.error(`Erro ao enviar e-mail do ${fromUser} para ${toUser}: ${error}`);
         return {
           status: 'error',
           timestamp: new Date().toISOString(),

@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post,Body } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -19,7 +19,7 @@ export class AppController {
   }
 
   @Post("/send-email")
-  async sendEmail() {
-    return this.appService.sendEmail();
+  async sendEmail(@Body() body) {
+    return this.appService.sendEmail(body.fromUser, body.toUser, body.subject, body.message);
   }
 }

@@ -1,44 +1,54 @@
-import { Injectable } from '@nestjs/common';
-// import { nodemailer } from 'nodemailer';
+import { Injectable, Logger } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
+
+
+const SMTP_HOST = process.env.SMTP_HOST ?? 'smtp.email.com.br' ;
+const SMTP_PORT = process.env.SMTP_PORT ?? 465
+const SMTP_USER = process.env.SMTP_USER ?? 'user@email.com.br'
+const SMTP_PASS = process.env.SMTP_PASS ?? 'password'
+
 
 @Injectable()
 export class AppService {
 
+  private readonly logger = new Logger(AppService.name);
 
   getHello(): string {
-    return 'Hello World Emails!';
+    return 'Hello World App Emails!';
   }
 
   // async sendEmail(to: string, subject: string, text: string) {
-  async sendEmail() {
+  async sendEmail(fromUser: string , toUser: string, subject: string, message: string) {
+
+    this.logger.log(`Enviando e-mail de: ${fromUser} para: ${toUser} com assunto: ${subject} e mensagem: ${message}`);
 
     const mailOptions = {
-      from: 'tales.visgueira@tre-pi.jus.br',
-      to: 'talesvisgueira@gmail.com',
-      subject: 'TESTE E-mail',
-      text: 'Olá, este é o corpo do e-mail enviado do OPENALM!'
+      from: fromUser,
+      to: toUser,
+      subject: subject,
+      text: message
     };
 
     const transporter = nodemailer.createTransport({
-      host: 'email.tre-pi.jus.br',
-      port: 465,
+      host: SMTP_HOST,
+      port: SMTP_PORT,
       secure: true,
       auth: {
-        user: 'tales.visgueira@tre-pi.jus.br',
-        pass: 'taver5cea8!'
+        user: SMTP_USER,
+        pass: SMTP_PASS
       }
     });
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
+        this.logger.log('Erro ao enviar e-mail: ' + error);
         return {
           status: 'error',
           timestamp: new Date().toISOString(),
           message: 'Erro no envio do e-mail!'
         }
       } else {
-        console.log('E-mail enviado: ' + info.response);
+        this.logger.log('E-mail enviado: ' + info.response);
         return {
           status: 'ok',
           timestamp: new Date().toISOString(),

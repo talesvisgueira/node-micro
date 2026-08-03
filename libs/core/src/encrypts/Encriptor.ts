@@ -12,4 +12,3 @@ export class Encriptor {
         return CryptoJS.AES.decrypt(cipherText, this.rotatingParameter);
     }
 }
-

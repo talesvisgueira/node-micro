@@ -49,10 +49,15 @@ export class AppService {
     if (this.repository) {
         const entity: User | null = await this.repository.findOneBy({email: loginDto.username});
         if (!entity) throw new UnauthorizedException('Usuário não cadastrado.');
+        if (!entity.active) throw new ForbiddenException('Usuário inativo.');
 
         const passwordDecrypt = new Encriptor().decrypt(loginDto.password).toString(CryptoJS.enc.Utf8)  ;
         const isMatch = await this.bcrypt.compare(passwordDecrypt, entity.password);
-        if (!isMatch) throw new ForbiddenException('Credencial do usuário inválida.');
+        if (!isMatch) {
+          this.logger.warn(`Credencial do usuário '${loginDto.username}' inválida....(FALHA)`);
+          this.eventMessageService.sendEvent(this.EXCHANGE,this.ROUTING_KEY,this.SOURCE,'falha-autenticação',loginDto);
+          throw new ForbiddenException('Credencial do usuário inválida.');
+        }
 
         this.logger.warn(`Senha do usuario verificado ....(OK)`);
         this.eventMessageService.sendEvent(this.EXCHANGE,this.ROUTING_KEY,this.SOURCE,'sucesso-autenticação',loginDto);

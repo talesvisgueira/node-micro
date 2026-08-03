@@ -28,5 +28,5 @@ export class AppController {
     return this.appService.register(body)
   }
 
-  
+
 }

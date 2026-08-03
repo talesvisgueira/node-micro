@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { nodemailer } from 'nodemailer';
+// import { nodemailer } from 'nodemailer';
+import * as nodemailer from 'nodemailer';
 
 @Injectable()
 export class AppService {
@@ -20,9 +21,9 @@ export class AppService {
     };
 
     const transporter = nodemailer.createTransport({
-      host: '://email.tre-pi.jus.br',
-      port: 587,
-      secure: false,
+      host: 'email.tre-pi.jus.br',
+      port: 465,
+      secure: true,
       auth: {
         user: 'tales.visgueira@tre-pi.jus.br',
         pass: 'taver5cea8!'
@@ -31,7 +32,7 @@ export class AppService {
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-         return {
+        return {
           status: 'error',
           timestamp: new Date().toISOString(),
           message: 'Erro no envio do e-mail!'

@@ -4,12 +4,13 @@ import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const logger = new Logger("MS-Products");
+  const appNAme = process.env.APP_NAME ?? 'MS-Products';
+  const logger = new Logger(appNAme);
 
-  const port = process.env.PORT ?? 3003;
+  const port = process.env.PORT ?? 3004;
   await app.listen(port);
 
-  logger.warn(`Microserviço 'Products' ativo na porta: ${port}`);
+  logger.warn(`Microserviço '${appNAme}' ativo na porta: ${port}`);
 
 }
 bootstrap();

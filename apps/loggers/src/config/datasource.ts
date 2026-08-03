@@ -15,7 +15,7 @@ export const AppDataSource = new DataSource({
     migrationsTableName: "migrations",
     migrationsTransactionMode: "all",
     entities: [ __dirname + '/../**/entities/*.entity{.ts,.js}'],
-    migrations: [ "/../migrations/**/*{.js,.ts}"],
+    migrations: [ '/../migrations/**/*{.js,.ts}'],
 
     // synchronize: process.env.NODE_ENV !== 'production',
     logging: process.env.NODE_ENV === 'development',

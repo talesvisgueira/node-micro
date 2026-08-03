@@ -48,7 +48,10 @@ export class LoggerConsumerService {
             let dto: CreateAuditDto = new CreateAuditDto();
             dto.origem = origem;
             dto.acao = acao;
-            dto.mensagem = mensagem;
+
+            if (mensagem.length > 1000)  dto.mensagem = mensagem.substring(0, 1000);
+            else dto.mensagem = mensagem;
+
             await this.auditService.create(dto);
 
             this.logger.log(`Message proccessed.`);

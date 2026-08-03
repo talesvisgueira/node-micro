@@ -6,9 +6,10 @@ import {AppDataSource} from "./config/datasource.js"
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const logger = new Logger("MS-Users");
+  const appNAme = process.env.APP_NAME ?? 'MS-Organizations';
+  const logger = new Logger(appNAme);
 
-  const port = process.env.PORT ?? 3001;
+  const port = process.env.PORT ?? 3003;
   const db_porta = process.env.DB_PORT ?? 3501;
   const database = process.env.DB_DATABASE ?? 'postgres';
 
@@ -27,7 +28,7 @@ async function bootstrap() {
 
   await app.listen(port);
 
-  logger.warn(`Microserviço 'Organizations' ativo na porta: ${port}`);
+  logger.warn(`Microserviço '${appNAme}' ativo na porta: ${port}`);
 
 }
 bootstrap();

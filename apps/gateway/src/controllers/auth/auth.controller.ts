@@ -1,5 +1,5 @@
 import { Throttle } from '@nestjs/throttler';
-import { Controller, Body, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { Controller, Body, HttpCode, HttpStatus, Post, Logger } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthService } from '@/src/controllers/auth//auth.service';
 import { LoginDto } from '@/src/controllers/auth/dtos/login.dto';
@@ -9,6 +9,9 @@ import { UserCreateDto } from '@/src/controllers/auth/dtos/UserCreate.dto';
 @ApiTags('Authentication')
 @Controller('api')
 export class AuthController {
+
+    private readonly logger = new Logger(AuthController.name);
+
     constructor(private readonly authService: AuthService) { }
 
     @Post('/login')
@@ -32,7 +35,11 @@ export class AuthController {
     })
     @ApiResponse({ status: 401, description: 'Invalid credentials' })
     async login(@Body() loginDto: LoginDto) {
-        return this.authService.login(loginDto);
+        try {
+            return this.authService.login(loginDto);
+        } catch (error) {
+            throw error;
+        }
     }
 
     @Post('/register')

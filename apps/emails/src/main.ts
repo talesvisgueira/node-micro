@@ -4,12 +4,13 @@ import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const logger = new Logger("MS-Emails");
+  const appNAme = process.env.APP_NAME ?? 'MS-Emails';
+  const logger = new Logger(appNAme);
 
-  const port = process.env.PORT ?? 3008;
+  const port = process.env.PORT ?? 3009;
   await app.listen(port);
 
-  logger.warn(`Microserviço 'Emails' ativo na porta: ${port}`);
+  logger.warn(`Microserviço '${appNAme}' ativo na porta: ${port}`);
 
 }
 bootstrap();

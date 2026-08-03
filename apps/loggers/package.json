@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "",
   "author": "",
-  "type":"commonjs",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -20,10 +19,10 @@
     "test:ui": "vitest --ui",
     "test:cov": "vitest --coverage",
     "typeorm": "ts-node ./node_modules/typeorm/cli",
-    "migration:run": "pnpm run typeorm migration:run",
-    "migration:generate": "pnpm run typeorm migration:generate",
-    "migration:revert": "pnpm run typeorm migration:revert",
-    "migration:show": "pnpm run typeorm migration:show"
+    "migration:run": "pnpm run typeorm migration:run  -d src/config/datasource.ts",
+    "migration:generate": "pnpm run typeorm migration:generate  -d src/config/datasource.ts",
+    "migration:revert": "pnpm run typeorm migration:revert  -d src/config/datasource.ts",
+    "migration:show": "pnpm run typeorm migration:show  -d src/config/datasource.ts"
   },
   "dependencies": {
     "@myorg/core": "link:../../libs/core",

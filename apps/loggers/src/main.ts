@@ -7,8 +7,9 @@ import 'reflect-metadata'
 
 
 async function bootstrap() {
-  const logger = new Logger("MS-Glogger");
-  const port = process.env.PORT ?? 3009;
+  const appNAme = process.env.APP_NAME ?? 'MS-Loggers';
+  const logger = new Logger(appNAme);
+  const port = process.env.PORT ?? 3002;
   const database = process.env.DB_DATABASE ?? 'postgres';
   const db_porta = process.env.DB_PORT ?? 3501;
 
@@ -19,7 +20,7 @@ async function bootstrap() {
   logger.warn(`Banco de dados: ${database} inicializado na porta ${db_porta}` );
 
   await app.listen(port, () => {
-    logger.warn(`Microserviço 'Glogger' ativo na porta: ${port}`);
+    logger.warn(`Microserviço '${appNAme}' ativo na porta: ${port}`);
   });
 
   

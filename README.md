@@ -94,8 +94,13 @@ nvm install 22.1.0
 
 
 3 - Instalação do gerenciador de pacotes - PNPM:
+- Instalação da versão 11.
 ```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+npm install -g pnpm@latest-11
+```
+- Atualização da versão do PNPM 11 para 12.
+```sh
+pnpm self-update next-12
 ```
 
 ### INSTALAÇÃO DAS DEPENDÊNCIAS DO SISTEMA.

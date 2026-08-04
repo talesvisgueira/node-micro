@@ -1,4 +1,4 @@
-# <img src=".github/logo.svg" alt="" width="32"> OpenALM - Application Lifecycle Management, ferramenta para gerenciamento do ciclo de vida das aplicações.
+# <img src=".github/logo.svg" alt="" width="32"> OpenALM - Application Lifecycle Management, gerenciamento do ciclo de vida das aplicações.
 
 
 [![NPM version](https://img.shields.io/npm/v/@anthropic-ai/sdk.svg)](https://npmjs.org/package/@anthropic-ai/sdk)
@@ -8,9 +8,13 @@ O sistema OpenALM tem por finalidade gerenciar o ciclo de vida das aplicações 
 - As cinco etapas de um ALM (application lifecycle management) são:
 
   a) Gerenciamento de requisitos;
+
   b) Desenvolvimento;
+
   c) Testes e garantia de qualidade;
+
   d) Implementação;
+
   e) Manutenção e oimização contínuas;
 
 ## Arquitetura do projeto.
@@ -26,7 +30,7 @@ Este projeto está licenciado sobre a licença MIT. Veja em [LICENSE](./docs/LIC
 
 ## SUMÁRIO.
 
-- [ OpenALM - Application Lifecycle Management, ferramenta para gerenciamento do ciclo de vida das aplicações.](#-openalm---application-lifecycle-management-ferramenta-para-gerenciamento-do-ciclo-de-vida-das-aplicações)
+- [ OpenALM - Application Lifecycle Management, gerenciamento do ciclo de vida das aplicações.](#-openalm---application-lifecycle-management-gerenciamento-do-ciclo-de-vida-das-aplicações)
   - [Arquitetura do projeto.](#arquitetura-do-projeto)
   - [LICENÇA DE USO.](#licença-de-uso)
   - [SUMÁRIO.](#sumário)

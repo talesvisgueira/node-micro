@@ -1,40 +1,41 @@
-# <img src=".github/logo.svg" alt="" width="32"> Gerenciamento do ciclo de vida das aplicações.
+# <img src=".github/logo.svg" alt="" width="32"> OpenALM - Application Lifecycle Management, ferramenta para gerenciamento do ciclo de vida das aplicações.
 
 
 [![NPM version](https://img.shields.io/npm/v/@anthropic-ai/sdk.svg)](https://npmjs.org/package/@anthropic-ai/sdk)
 
 O sistema OpenALM tem por finalidade gerenciar o ciclo de vida das aplicações (softwates), utilizando uma arquitetura de microserviços escaláveis e adaptativas para garantir uma gestão eficiente sobre as tarefas de  gerenciamento de projetos, pessoal, tarefas de implementações dos produtos, venda/localção e manutenção dos softwares.
 
-## Arquitetura do projeto
+## Arquitetura do projeto.
 
 <p align="center">
   <img src="docs/images/design.png">
   <br/>
 </p>
 
-## LICENÇA DE USO
+## LICENÇA DE USO.
 
 Este projeto está licenciado sobre a licença MIT. Veja em [LICENSE](./docs/LICENSE) file for details.
 
-## SUMÁRIO
+## SUMÁRIO.
 
-- [ Gerenciamento do ciclo de vida das aplicações.](#-gerenciamento-do-ciclo-de-vida-das-aplicações)
-  - [Arquitetura do projeto](#arquitetura-do-projeto)
-  - [LICENÇA DE USO](#licença-de-uso)
-  - [SUMÁRIO](#sumário)
-  - [RELEASES](#releases)
-  - [DOCUMENTAÇÃO](#documentação)
-  - [DEPENDÊNCIAS](#dependências)
-    - [INSTALAÇÃO](#instalação)
+- [ OpenALM - Application Lifecycle Management, ferramenta para gerenciamento do ciclo de vida das aplicações.](#-openalm---application-lifecycle-management-ferramenta-para-gerenciamento-do-ciclo-de-vida-das-aplicações)
+  - [Arquitetura do projeto.](#arquitetura-do-projeto)
+  - [LICENÇA DE USO.](#licença-de-uso)
+  - [SUMÁRIO.](#sumário)
+  - [RELEASES.](#releases)
+  - [DOCUMENTAÇÃO.](#documentação)
+  - [DEPENDÊNCIAS DO PROJETO.](#dependências-do-projeto)
+    - [INSTALAÇÃO DOS COMPONENTES BÁSICOS.](#instalação-dos-componentes-básicos)
+    - [INSTALAÇÃO DAS DEPENDÊNCIAS DO SISTEMA.](#instalação-das-dependências-do-sistema)
     - [BUILDS DAS LIBS E APLICAÇÕES](#builds-das-libs-e-aplicações)
-    - [INSTALAR POSTGRES, RABBITMQ, PROMETEUS E GRAFANA](#instalar-postgres-rabbitmq-prometeus-e-grafana)
-    - [CONFIGURAR O ACESSO AOS BD E RABBITMQ](#configurar-o-acesso-aos-bd-e-rabbitmq)
-    - [INICIALIZAR APLICAÇÕES](#inicializar-aplicações)
-  - [MÓDULOS DO SISTEMA](#módulos-do-sistema)
-  - [CONTRIBUIÇÕES](#contribuições)
+    - [INSTALAÇÃO DO POSTGRES, RABBITMQ, PROMETEUS E GRAFANA](#instalação-do-postgres-rabbitmq-prometeus-e-grafana)
+    - [CONFIGURAÇÃO DO ACESSO AOS BD E RABBITMQ.](#configuração-do-acesso-aos-bd-e-rabbitmq)
+    - [INICIALIZAÇÃO APLICAÇÕES.](#inicialização-aplicações)
+  - [MÓDULOS DO SISTEMA.](#módulos-do-sistema)
+  - [CONTRIBUIÇÕES.](#contribuições)
 
 
-## RELEASES
+## RELEASES.
 
 See [CHANGELOG.md](./docs/CONTRIBUTING.md).
 
@@ -43,12 +44,12 @@ See [CHANGELOG.md](./docs/CONTRIBUTING.md).
 | v0.1.0 | 2026-08-20 | CANDIDATE | [Detalhe](docs/CHANGELOG.md/#010-2023-07-11)  |
 | v1.0.0 | 2027-01-01 | RELEASE | [Detalhe](docs/CHANGELOG.md/#100-2023-07-11)  |
 
-## DOCUMENTAÇÃO
+## DOCUMENTAÇÃO.
 
 Mais informações no link **[openALM.com](https://openalm.com)**.
 
 
-## DEPENDÊNCIAS
+## DEPENDÊNCIAS DO PROJETO.
 
 - Node.js: v24.17.0
 - Pnpm: v11.8.0
@@ -63,7 +64,41 @@ Mais informações no link **[openALM.com](https://openalm.com)**.
 - Prometheus: v3.12.0
 - Grafana: v13.0.2
 
-### INSTALAÇÃO
+### INSTALAÇÃO DOS COMPONENTES BÁSICOS.
+
+1 - Instalação do gerenciador de instalação do NodeJs - NVM:
+```sh
+sudo apt install npm
+```
+
+```sh
+nvm -–version
+```
+
+2 - Instalação do NodeJs:
+
+a) Instalação usando o gerenciador de pacotes do Linux.
+```sh
+sudo apt install nodejs
+```
+
+b) Instalação usando o NVM
+
+```sh
+nvm ls-remote
+```
+
+```sh
+nvm install 22.1.0
+```
+
+
+3 - Instalação do gerenciador de pacotes - PNPM:
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+```
+
+### INSTALAÇÃO DAS DEPENDÊNCIAS DO SISTEMA.
 
 ```sh
 pnpm install
@@ -77,21 +112,21 @@ pnpm --filter "./libs/**" run build
 pnpm --filter web run build
 ```
 
-### INSTALAR POSTGRES, RABBITMQ, PROMETEUS E GRAFANA
+### INSTALAÇÃO DO POSTGRES, RABBITMQ, PROMETEUS E GRAFANA
 
 ```sh
 docker compose up -d
 ```
 
-### CONFIGURAR O ACESSO AOS BD E RABBITMQ
+### CONFIGURAÇÃO DO ACESSO AOS BD E RABBITMQ.
 
-### INICIALIZAR APLICAÇÕES
+### INICIALIZAÇÃO APLICAÇÕES.
 
 ```sh
 pnpm start
 ```
 
-## MÓDULOS DO SISTEMA
+## MÓDULOS DO SISTEMA.
 
 | MÓDULO | FINALIDADE| TIPO | LINK |
 |---|---|---|---|
@@ -107,7 +142,7 @@ pnpm start
 | Customer | Aplicação das empresas clientes | Frontend | [Detalhe](apps/filial/README.md)  |
 | Worker | Aplicação para uso pelos funcionários | Frontend | [Detalhe](apps/worker/README.md)  |
 
-## CONTRIBUIÇÕES
+## CONTRIBUIÇÕES.
 
 See [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
 

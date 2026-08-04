@@ -3,7 +3,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@anthropic-ai/sdk.svg)](https://npmjs.org/package/@anthropic-ai/sdk)
 
-O sistema OpenALM tem por finalidade gerenciar o ciclo de vida das aplicações (softwates), utilizando uma arquitetura de microserviços escaláveis e adaptativa para garantir uma gestão eficiente do planejamento e execução do gerenciamento das tarefas desde a ideia inicial até a descontinuação do sistema, além de integrar as equipes de negócio, desenvolvedores, testes, operação (DevOps).
+O sistema OpenALM tem por finalidade gerenciar o ciclo de vida das aplicações (softwates), utilizando uma arquitetura de microserviços escaláveis e adaptativa para integrar as equipes de negócio, desenvolvedores, testes e operação (DevOps). Promovendo uma gestão eficiente no planejamento e na execução das tarefas, desde a ideia inicial até a descontinuação do sistema.
 
 - As cinco etapas de um ALM (application lifecycle management) são:
 

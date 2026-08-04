@@ -30,7 +30,7 @@ Este projeto está licenciado sobre a licença MIT. Veja em [LICENSE](./docs/LIC
     - [BUILDS DAS LIBS E APLICAÇÕES](#builds-das-libs-e-aplicações)
     - [INSTALAÇÃO DO POSTGRES, RABBITMQ, PROMETEUS E GRAFANA](#instalação-do-postgres-rabbitmq-prometeus-e-grafana)
     - [CONFIGURAÇÃO DO ACESSO AOS BD E RABBITMQ.](#configuração-do-acesso-aos-bd-e-rabbitmq)
-    - [INICIALIZAÇÃO APLICAÇÕES.](#inicialização-aplicações)
+    - [INICIALIZAÇÃO DAS APLICAÇÕES.](#inicialização-das-aplicações)
   - [MÓDULOS DO SISTEMA.](#módulos-do-sistema)
   - [CONTRIBUIÇÕES.](#contribuições)
 
@@ -124,8 +124,18 @@ docker compose up -d
 ```
 
 ### CONFIGURAÇÃO DO ACESSO AOS BD E RABBITMQ.
+ Antes de inicializar o sistema é necessário criar os arquivos .env de cada módulo contendo os valores dos parâmetros exemplificados no arquivo .env.example.
+ - Configuração do módulo gateway:
+```sh
+cp apps/gateway/.env.example apps/gateway/.env
+```
 
-### INICIALIZAÇÃO APLICAÇÕES.
+```sh
+nano apps/gateway/.env
+```
+  
+
+### INICIALIZAÇÃO DAS APLICAÇÕES.
 
 ```sh
 pnpm start

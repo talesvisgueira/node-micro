@@ -1,1 +1,43 @@
-<p>projetos works!</p>
+<div class="subpage-wrapper">
+  <!-- Subpage Header -->
+  <div class="subpage-header mb-4 pb-3 border-bottom d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <div>
+      <div class="d-flex align-items-center gap-2 mb-1">
+        <span class="badge-modern-primary">{{ routeInfo().badge }}</span>
+      </div>
+      <h1 class="h4 fw-bold text-dark mb-1 d-flex align-items-center gap-2">
+        <i class="bi text-teal" [class]="routeInfo().icon" aria-hidden="true"></i>
+        <span>{{ routeInfo().title }}</span>
+      </h1>
+      <p class="text-muted small mb-0">
+        {{ routeInfo().desc }}
+      </p>
+    </div>
+
+    <div>
+      <span class="badge-modern-success d-inline-flex align-items-center gap-1">
+        <i class="bi bi-shield-check" aria-hidden="true"></i>
+        Módulo Operacional
+      </span>
+    </div>
+  </div>
+
+  <!-- Content Card -->
+  <div class="card subpage-card shadow-sm p-4 mb-4">
+    <h2 class="h6 fw-bold text-dark mb-3">Tópicos e Diretrizes Principais</h2>
+    <div class="row g-3">
+      @for (bullet of routeInfo().bullets; track $index) {
+        <div class="col-md-6">
+          <div class="topic-item p-3 rounded-3 h-100 d-flex align-items-start gap-3">
+            <div class="topic-icon">
+              <i class="bi bi-check2-circle text-teal" aria-hidden="true"></i>
+            </div>
+            <div>
+              <p class="mb-0 text-dark small fw-medium">{{ bullet }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

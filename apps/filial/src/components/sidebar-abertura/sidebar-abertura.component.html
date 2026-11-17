@@ -1,25 +1,85 @@
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto px-0">
-            <div id="sidebar" class="collapse collapse-horizontal show border-end"  >
-                <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-95">
-                    <a href="access" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Empresa</span> </a>
-                    <a href="access/objectives" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Portifólio</span> </a>
-                    <a href="access/advantages" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Serviços</span> </a>
-                    <a href="access/features" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Propdutos</span> </a>
-                    <a href="access/releases" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Clientes</span> </a>
-                    <a href="access/questions" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Dúvidas</span> </a>
-                    <a href="access/contact" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Contato</span> </a>
-                    <a href="login" class="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><span>Entrar</span> </a>
-                </div>
-            </div>
+<div class="container-fluid px-lg-4 py-3">
+  <div class="row g-4">
+    <!-- Sub-navigation Sidebar -->
+    <aside class="col-12 col-md-4 col-lg-3">
+      <div class="portal-sidebar-card shadow-sm">
+        <div class="sidebar-header p-3 border-bottom">
+          <span class="sidebar-badge">Portal Institucional</span>
+          <h2 class="sidebar-title">Conheça o SEPPEx</h2>
         </div>
-        <main class="col ps-md-2 pt-2">
-            <div class="row">
-                <div class="col-12">
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
-        </main>
-    </div>
+        <nav class="list-group list-group-flush portal-nav-list p-2">
+          <a
+            routerLink="/access"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="list-group-item list-group-item-action d-flex align-items-center gap-2"
+          >
+            <i class="bi bi-house-door" aria-hidden="true"></i>
+            <span>Visão Geral</span>
+          </a>
+          <a
+            routerLink="/access/objectives"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action d-flex align-items-center gap-2"
+          >
+            <i class="bi bi-bullseye" aria-hidden="true"></i>
+            <span>Objetivos do Sistema</span>
+          </a>
+          <a
+            routerLink="/access/advantages"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action d-flex align-items-center gap-2"
+          >
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            <span>Vantagens & Benefícios</span>
+          </a>
+          <a
+            routerLink="/access/features"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action d-flex align-items-center gap-2"
+          >
+            <i class="bi bi-grid-3x3-gap" aria-hidden="true"></i>
+            <span>Recursos & Módulos</span>
+          </a>
+          <a
+            routerLink="/access/releases"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action d-flex align-items-center gap-2"
+          >
+            <i class="bi bi-journal-code" aria-hidden="true"></i>
+            <span>Versões & Notas</span>
+          </a>
+          <a
+            routerLink="/access/questions"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action d-flex align-items-center gap-2"
+          >
+            <i class="bi bi-question-circle" aria-hidden="true"></i>
+            <span>Perguntas Frequentes</span>
+          </a>
+          <a
+            routerLink="/access/contact"
+            routerLinkActive="active"
+            class="list-group-item list-group-item-action d-flex align-items-center gap-2"
+          >
+            <i class="bi bi-headset" aria-hidden="true"></i>
+            <span>Suporte & Contato</span>
+          </a>
+        </nav>
+        <div class="p-3 border-top bg-light-subtle rounded-bottom">
+          <a routerLink="/login" class="btn btn-outline-primary btn-sm w-100 d-flex align-items-center justify-content-center gap-2">
+            <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+            <span>Acessar com Login</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Subroute content -->
+    <main class="col-12 col-md-8 col-lg-9">
+      <div class="portal-content-card shadow-sm p-4">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
 </div>

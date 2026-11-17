@@ -1,38 +1,378 @@
-<app-header></app-header>
-<app-navbar></app-navbar>
+<div class="abertura-layout">
+  <app-header></app-header>
+  <app-navbar></app-navbar>
 
-<section class="banner-section">
-  <div>
-    <div>
-      <div style="width: 1905px">
-        <div
-          class="item d-flex align-items-center"
-          style="
-            height: 90vh;
-            width: 100%;
-            background-image: url('./img/imageFundo1.jpg');
-            background-size: cover;
-            background-position: center;
-          "
-        >
-          <div class="container">
-            <div class="row align-items-center">
-              <div>
-                <!-- <h5 class="text-primary-color fw-bold" style="letter-spacing: 2px;">MAIS RECENTE</h5> -->
-                <h1 class="display-12 fw-bold" style="color: #00ff00">
-                  SISTEMA DE EXAME DE PAGAMENTO DE PESSOAL DO EXÉRCITO - SEPPEx
-                </h1>
-                <p class="col-lg-12 text-white">
-                  Sistema para realização do exame da folha de pagamento dos militares da ativa,
-                  veteranos, servidores civis em exercício e pensionistas do Exército Brasileiro.
-                </p>
+  <main class="main-content">
+    @if (isChildRouteActive()) {
+      <!-- Sub-route view with dedicated institutional sidebar -->
+      <section class="py-4 bg-surface-subtle min-vh-75">
+        <app-sidebar-abertura></app-sidebar-abertura>
+      </section>
+    } @else {
+      <!-- Modern Hero Section -->
+      <section class="hero-section" aria-label="Apresentação institucional">
+        <div class="hero-bg-overlay" aria-hidden="true"></div>
+        <div class="hero-grid-pattern" aria-hidden="true"></div>
+
+        <div class="container hero-container position-relative">
+          <div class="row align-items-center min-vh-80 py-5">
+            <div class="col-lg-8 text-center text-lg-start">
+              <!-- Security Badge -->
+              <div class="d-inline-flex align-items-center gap-2 hero-badge mb-3">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+                <span>Plataforma Oficial de Auditoria & Conformidade</span>
+              </div>
+
+              <!-- Main Title -->
+              <h1 class="hero-title mb-3">
+                Sistema de Exame de Pagamento de Pessoal
+                <span class="highlight-seppex">SEPPEx</span>
+              </h1>
+
+              <!-- Subtitle / Mission -->
+              <p class="hero-subtitle mb-4">
+                Ambiente de alta precisão para governança, auditoria contínua e exame analítico da
+                folha de pagamento de militares da ativa, veteranos, servidores civis e pensionistas
+                do Exército Brasileiro.
+              </p>
+
+              <!-- CTA Actions -->
+              <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start mb-5">
+                <button
+                  type="button"
+                  class="btn btn-hero-primary d-inline-flex align-items-center gap-2"
+                  (click)="navigateToLogin()"
+                >
+                  <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+                  <span>Acessar Plataforma</span>
+                </button>
+                <a
+                  routerLink="/access/features"
+                  class="btn btn-hero-secondary d-inline-flex align-items-center gap-2"
+                >
+                  <i class="bi bi-grid-3x3-gap" aria-hidden="true"></i>
+                  <span>Conhecer Recursos</span>
+                </a>
+              </div>
+
+              <!-- Quick Security Trust Indicators -->
+              <div class="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start hero-trust-indicators">
+                <div class="trust-item">
+                  <i class="bi bi-lock-fill text-teal me-1" aria-hidden="true"></i>
+                  <span>TLS 1.3 / E2E</span>
+                </div>
+                <div class="trust-item">
+                  <i class="bi bi-patch-check-fill text-teal me-1" aria-hidden="true"></i>
+                  <span>Conformidade Normativa</span>
+                </div>
+                <div class="trust-item">
+                  <i class="bi bi-hdd-network-fill text-teal me-1" aria-hidden="true"></i>
+                  <span>Trilha de Auditoria Ativa</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Graphic Card / Visual Badge -->
+            <div class="col-lg-4 d-none d-lg-block">
+              <div class="hero-floating-card p-4">
+                <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="status-indicator-live"></span>
+                    <span class="fw-bold text-white small">Status do Sistema</span>
+                  </div>
+                  <span class="badge-modern-success">100% Operacional</span>
+                </div>
+
+                <div class="stats-mini-list">
+                  <div class="stats-mini-item mb-3">
+                    <div class="text-muted-hero small">Organizações Atendidas</div>
+                    <div class="d-flex align-items-baseline justify-content-between">
+                      <span class="h4 text-white fw-bold mb-0">140+ OMs</span>
+                      <span class="text-teal small"><i class="bi bi-graph-up-arrow me-1"></i>Nacional</span>
+                    </div>
+                  </div>
+
+                  <div class="stats-mini-item mb-3">
+                    <div class="text-muted-hero small">Precisão em Auditoria</div>
+                    <div class="d-flex align-items-baseline justify-content-between">
+                      <span class="h4 text-white fw-bold mb-0">99.98%</span>
+                      <span class="text-teal small"><i class="bi bi-check-all me-1"></i>Validado</span>
+                    </div>
+                  </div>
+
+                  <div class="stats-mini-item">
+                    <div class="text-muted-hero small">Registros Auditados</div>
+                    <div class="d-flex align-items-baseline justify-content-between">
+                      <span class="h4 text-white fw-bold mb-0">284.000+</span>
+                      <span class="text-teal small"><i class="bi bi-shield-shaded me-1"></i>Criptografado</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-3 border-top mt-3">
+                  <a routerLink="/login" class="btn btn-sm btn-outline-teal w-100">
+                    Autenticação com Certificado
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<app-footer></app-footer>
+      <!-- KPI Metrics Strip -->
+      <section class="kpi-strip py-4">
+        <div class="container">
+          <div class="row g-4 text-center">
+            <div class="col-6 col-md-3">
+              <div class="kpi-item">
+                <div class="kpi-number">100%</div>
+                <div class="kpi-label">Auditoria Digital & Rastreável</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="kpi-item">
+                <div class="kpi-number">90%</div>
+                <div class="kpi-label">Redução de Tempo em Exames</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="kpi-item">
+                <div class="kpi-number">140+</div>
+                <div class="kpi-label">Organizações Militares</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="kpi-item">
+                <div class="kpi-number">24/7</div>
+                <div class="kpi-label">Disponibilidade Operacional</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Features Grid -->
+      <section class="features-section py-5">
+        <div class="container py-4">
+          <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="section-badge">Módulos & Capacidades</span>
+            <h2 class="section-title">Tecnologia Aplicada à Conformidade</h2>
+            <p class="section-description">
+              O SEPPEx integra módulos essenciais para assegurar a exatidão dos proventos, descontos e
+              benefícios em conformidade com as diretrizes do Exército Brasileiro.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Feature 1 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card h-100">
+                <div class="feature-icon-wrapper bg-teal-subtle text-teal">
+                  <i class="bi bi-file-earmark-diff" aria-hidden="true"></i>
+                </div>
+                <h3 class="feature-title">Exame Automatizado de Folha</h3>
+                <p class="feature-text">
+                  Cruzamento massivo de contracheques, identificação de inconsistências em rubricas e
+                  validação algorítmica de adicionais de tempo de serviço e habilitação.
+                </p>
+                <a routerLink="/access/features" class="feature-link">
+                  Saiba mais <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card h-100">
+                <div class="feature-icon-wrapper bg-blue-subtle text-blue">
+                  <i class="bi bi-building" aria-hidden="true"></i>
+                </div>
+                <h3 class="feature-title">Gestão de Organizações Militares</h3>
+                <p class="feature-text">
+                  Parametrização centralizada de Unidades Gestoras (UG), comandos regionais e
+                  guarnições com suporte a regras orçamentárias específicas.
+                </p>
+                <a routerLink="/access/objectives" class="feature-link">
+                  Saiba mais <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card h-100">
+                <div class="feature-icon-wrapper bg-amber-subtle text-amber">
+                  <i class="bi bi-journal-check" aria-hidden="true"></i>
+                </div>
+                <h3 class="feature-title">Conformidade com Diretrizes</h3>
+                <p class="feature-text">
+                  Auditoria contínua frente às tabelas de soldo, leis de remuneração dos militares e
+                  decisões de órgãos de controle interno e externo.
+                </p>
+                <a routerLink="/access/advantages" class="feature-link">
+                  Saiba mais <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card h-100">
+                <div class="feature-icon-wrapper bg-emerald-subtle text-emerald">
+                  <i class="bi bi-shield-lock" aria-hidden="true"></i>
+                </div>
+                <h3 class="feature-title">Rastreabilidade & Auditoria</h3>
+                <p class="feature-text">
+                  Registro cronológico de todas as consultas, homologações e alterações via arquitetura
+                  de mensageria RabbitMQ e logs estruturados em PostgreSQL.
+                </p>
+                <a routerLink="/access/features" class="feature-link">
+                  Saiba mais <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card h-100">
+                <div class="feature-icon-wrapper bg-indigo-subtle text-indigo">
+                  <i class="bi bi-pie-chart" aria-hidden="true"></i>
+                </div>
+                <h3 class="feature-title">Painéis Executivos & BI</h3>
+                <p class="feature-text">
+                  Dashboards interativos com visão consolidada da folha, comparativos entre meses e
+                  alertas automáticos de variações volumétricas expressivas.
+                </p>
+                <a routerLink="/access/advantages" class="feature-link">
+                  Saiba mais <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-card h-100">
+                <div class="feature-icon-wrapper bg-purple-subtle text-purple">
+                  <i class="bi bi-person-badge" aria-hidden="true"></i>
+                </div>
+                <h3 class="feature-title">Controle Granular de Perfis</h3>
+                <p class="feature-text">
+                  Perfis baseados em função (RBAC) com autenticação centralizada Keycloak, garantindo
+                  que cada operador acesse apenas as unidades de sua alçada.
+                </p>
+                <a routerLink="/access/objectives" class="feature-link">
+                  Saiba mais <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section py-5 bg-surface-subtle">
+        <div class="container py-4">
+          <div class="text-center max-w-700 mx-auto mb-5">
+            <span class="section-badge">Perguntas Frequentes</span>
+            <h2 class="section-title">Dúvidas Frequentes sobre o SEPPEx</h2>
+            <p class="section-description">
+              Respostas rápidas para as principais dúvidas dos operadores e auditores de folha de pagamento.
+            </p>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-9">
+              <div class="accordion modern-accordion" id="faqAccordion">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item mb-3">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      [class.collapsed]="activeFaqIndex() !== 0"
+                      type="button"
+                      (click)="toggleFaq(0)"
+                    >
+                      <i class="bi bi-question-circle-fill me-2 text-teal"></i>
+                      Como funciona o processo de exame automatizado de folha?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" [class.show]="activeFaqIndex() === 0">
+                    <div class="accordion-body text-secondary">
+                      O sistema processa os arquivos de remuneração enviados pelas Unidades Gestoras, aplicando regras de consistência normativa e cálculos comparativos. Caso alguma divergência seja detectada, um apontamento de auditoria é gerado para verificação antes do fechamento bancário.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item mb-3">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      [class.collapsed]="activeFaqIndex() !== 1"
+                      type="button"
+                      (click)="toggleFaq(1)"
+                    >
+                      <i class="bi bi-shield-check me-2 text-teal"></i>
+                      Quais são os requisitos de acesso e segurança?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" [class.show]="activeFaqIndex() === 1">
+                    <div class="accordion-body text-secondary">
+                      O acesso é restrito aos militares e servidores devidamente autorizados pelo escalão competente, utilizando autenticação por credencial corporativa ou certificado digital ICP-Brasil, com rastreabilidade total de sessões e operações.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item mb-3">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      [class.collapsed]="activeFaqIndex() !== 2"
+                      type="button"
+                      (click)="toggleFaq(2)"
+                    >
+                      <i class="bi bi-clock-history me-2 text-teal"></i>
+                      Qual é o prazo para homologação após a análise de inconsistências?
+                    </button>
+                  </h3>
+                  <div class="accordion-collapse collapse" [class.show]="activeFaqIndex() === 2">
+                    <div class="accordion-body text-secondary">
+                      Após o processamento dos lotes de exame, a Unidade Gestora dispõe dos prazos definidos no calendário de pagamento mensal para justificar apontamentos ou realizar ajustes na base de dados.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA Callout -->
+      <section class="cta-section py-5">
+        <div class="container">
+          <div class="cta-card p-5 text-center text-white">
+            <span class="cta-pill mb-3">Acesso Operacional</span>
+            <h2 class="cta-title mb-3">Pronto para iniciar suas atividades de auditoria?</h2>
+            <p class="cta-text max-w-600 mx-auto mb-4">
+              Acesse o sistema com suas credenciais institucionais para gerenciar organizações, consultar folhas de pagamento e emitir relatórios de conformidade.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <button type="button" class="btn btn-hero-primary px-4 py-2" (click)="navigateToLogin()">
+                <i class="bi bi-box-arrow-in-right me-2" aria-hidden="true"></i>
+                Entrar no SEPPEx
+              </button>
+              <a routerLink="/access/contact" class="btn btn-hero-secondary px-4 py-2">
+                <i class="bi bi-headset me-2" aria-hidden="true"></i>
+                Falar com Suporte Técnico
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    }
+  </main>
+
+  <app-footer></app-footer>
+</div>

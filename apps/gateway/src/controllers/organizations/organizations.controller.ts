@@ -1,10 +1,13 @@
+import { IOrganization } from '@myorg/core/src/interfaces/organization';
 import { Controller, Body, HttpCode, HttpStatus, Get, Post, Logger } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Throttle } from '@nestjs/throttler';
 import type { OrganizationCreateRequest } from '@myorg/core/dist/interfaces/organizationCreateRequest';
 import { OrganizationsService } from '@/src/controllers/organizations/organizations.service';
 import { OrganizationCreateDto } from '@/src/controllers/auth/dtos/OrganizationCreateDto';
-import { identity } from 'rxjs';
+import { identity, Observable } from 'rxjs';
+ 
+
 
 
 @ApiTags('Organizations')
@@ -21,8 +24,9 @@ export class OrganizationsController {
     @ApiOperation({summary: 'Busca todas organizações',
         description: 'Busca lista de organizações existentes.'
     })
-    async getAll() {
-        return [{id: 1,sigla: 'aaaa', nome: 'aaaaaaaaaa'},{id: 2,sigla: 'bbbbb', nome: 'bbbbbbbbbbb'}]
+    async getAll(): Promise<IOrganization[]> {
+        console.log("Iniciando operação...");
+        return await this.service.getAll();
     }
 
     @Post('/create')

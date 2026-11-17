@@ -1,38 +1,58 @@
-import { Component, signal } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { LocalStorageService } from '../../services/LocalStorageService';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  private readonly router = inject(Router);
+  private readonly localStorageService = inject(LocalStorageService);
 
-  protected username = signal('');
-  protected isLoginValid = false;
+  readonly username = signal('');
+  readonly isLoginValid = signal(false);
+  readonly isMobileMenuOpen = signal(false);
 
-  constructor(public router:Router) {}
+  readonly isHomeRoute = computed(() => {
+    return this.router.url.startsWith('/home');
+  });
 
-  public definirUsuario() {
-    const storedUsername = localStorage.getItem('OpenSwesUserName');
-    if (storedUsername) {
-      this.isLoginValid = true;
-      this.username.set(storedUsername);
-    } else this.router.navigateByUrl('access');
-  }
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.definirUsuario();
   }
 
-  onLogin() {
-      this.router.navigateByUrl('login');
+  definirUsuario(): void {
+    const storedUsername = this.localStorageService.obterUserName();
+    if (storedUsername && storedUsername.trim().length > 0) {
+      this.isLoginValid.set(true);
+      this.username.set(storedUsername);
+    } else {
+      this.isLoginValid.set(false);
+      this.username.set('');
+    }
   }
 
-  onExit()   {
-    localStorage.setItem('OpenSwesUserName', '') ;
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen.update((open) => !open);
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen.set(false);
+  }
+
+  onLogin(): void {
+    this.closeMobileMenu();
+    this.router.navigateByUrl('login');
+  }
+
+  onExit(): void {
+    this.closeMobileMenu();
+    this.localStorageService.limparLocalStorage();
+    this.isLoginValid.set(false);
+    this.username.set('');
     this.router.navigateByUrl('access');
   }
-
 }

@@ -1,46 +1,140 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    
-    <div class="container-fluid" >
-      
-      <a class="navbar-brand" href="#">Home</a>
-      <!-- <button class="btn float-end" type="button" data-bs-target="#sidebar" data-bs-toggle="collapse"
-              aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
+<nav class="navbar navbar-expand-lg modern-navbar sticky-top" role="navigation" aria-label="Navegação principal">
+  <div class="container-fluid px-3 px-lg-4">
+    <!-- Brand / Logo -->
+    <a class="navbar-brand d-flex align-items-center gap-2" [routerLink]="isHomeRoute() ? '/home' : '/access'">
+      <div class="brand-emblem">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22" aria-hidden="true">
+          <path d="M16 2L4 7V15C4 22 9.1 28.5 16 30.3C22.9 28.5 28 22 28 15V7L16 2Z" fill="#0f766e" stroke="#2dd4bf" stroke-width="1.5"/>
+          <path d="M11 16L14.5 19.5L21 13" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand-text-group">
+        <span class="brand-name">SEPPEx</span>
+        <span class="brand-badge">Filial</span>
+      </div>
+    </a>
 
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-              aria-expanded="true" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-      </button> -->
+    <!-- Mobile Toggler -->
+    <button
+      class="navbar-toggler custom-toggler"
+      type="button"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen()"
+      aria-label="Alternar menu de navegação"
+    >
+      <i class="bi" [class.bi-list]="!isMobileMenuOpen()" [class.bi-x-lg]="isMobileMenuOpen()" aria-hidden="true"></i>
+    </button>
 
-      <div class="collapse navbar-collapse  text-right" id="navbarSupportedContent">
-        <div class=" navbar-collapse text-right"  >
-            <span class="text">   &nbsp;  </span>
-        </div>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!-- <li class="nav-item" [hidden]="!isLoginValid"> <a class="nav-link active" aria-current="page" href="home">HOME</a> </li> -->
-            <li class="nav-item"> <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Organização</a></li>
-            <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Projetos</a> </li>
-            <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Serviços</a> </li>
-            <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Produtos</a> </li>
-            <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Clientes</a> </li>
-            <li class="nav-item"><a class="nav-link" href="#" tabindex="-1" aria-disabled="false">Ajuda</a> </li>
-            <li class="nav-item"> </li>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-        </ul>
-        <!-- <span class="text" [hidden]="!isLoginValid"> Usuário: &nbsp;{{ username() }} &nbsp;  </span> -->
-        <div class="" [hidden]="!isLoginValid">
-            <form class="d-flex" [hidden]="!isLoginValid">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button> &nbsp;
-            </form>
-        </div>
-        <form class="d-flex" >
-          &nbsp;
-          <button class="btn btn-outline-success"  [hidden]="isLoginValid"  (click)="onLogin()" type="submit">ENTRAR</button>
-          <button class="btn btn-outline-warning"  [hidden]="!isLoginValid"  (click)="onExit()" type="submit">SAIR</button>
-        </form>
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse" [class.show]="isMobileMenuOpen()" id="navbarMainContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills-custom">
+        @if (isHomeRoute()) {
+          <!-- Authenticated / Dashboard links -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMobileMenu()">
+              <i class="bi bi-speedometer2 me-1" aria-hidden="true"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home/organizations" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="bi bi-building me-1" aria-hidden="true"></i>
+              Organizações
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home/projects" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="bi bi-folder2-open me-1" aria-hidden="true"></i>
+              Projetos & Exames
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home/users" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="bi bi-people me-1" aria-hidden="true"></i>
+              Usuários
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home/settings" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="bi bi-gear me-1" aria-hidden="true"></i>
+              Configurações
+            </a>
+          </li>
+        } @else {
+          <!-- Public Portal / Abertura links -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/access" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMobileMenu()">
+              <i class="bi bi-house-door me-1" aria-hidden="true"></i>
+              Início
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/access/objectives" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="bi bi-bullseye me-1" aria-hidden="true"></i>
+              Objetivos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/access/advantages" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="bi bi-stars me-1" aria-hidden="true"></i>
+              Vantagens
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/access/features" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="bi bi-grid-3x3-gap me-1" aria-hidden="true"></i>
+              Recursos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/access/questions" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="bi bi-question-circle me-1" aria-hidden="true"></i>
+              Dúvidas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/access/contact" routerLinkActive="active" (click)="closeMobileMenu()">
+              <i class="bi bi-headset me-1" aria-hidden="true"></i>
+              Contato
+            </a>
+          </li>
+        }
+      </ul>
+
+      <!-- Right Action Items -->
+      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+        @if (isLoginValid()) {
+          <div class="user-greeting-chip d-none d-xl-flex align-items-center gap-2">
+            <div class="user-avatar-circle">
+              <i class="bi bi-person-fill" aria-hidden="true"></i>
+            </div>
+            <div class="user-info-text">
+              <span class="user-name">{{ username() }}</span>
+              <span class="user-role">Auditor Operacional</span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-sm d-flex align-items-center gap-2 px-3 py-1-5 rounded-pill logout-btn"
+            (click)="onExit()"
+            title="Encerrar sessão com segurança"
+          >
+            <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+            <span>Sair</span>
+          </button>
+        } @else {
+          <button
+            type="button"
+            class="btn btn-primary-custom d-flex align-items-center gap-2 px-4 py-2 rounded-pill login-btn shadow-sm"
+            (click)="onLogin()"
+            title="Acessar com credenciais ou certificado"
+          >
+            <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+            <span>Entrar no Sistema</span>
+          </button>
+        }
       </div>
     </div>
-  </nav>
+  </div>
+</nav>

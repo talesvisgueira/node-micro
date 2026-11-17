@@ -58,7 +58,10 @@ export class AuthService {
             if (error instanceof AxiosError && error.response?.status === 403) {
                 throw new UnauthorizedException('Invalid login credentials');
             } if (error instanceof AxiosError ) {
-                this.eventMessageService.sendEvent(this.EXCHANGE,this.ROUTING_KEY,this.SOURCE,'falha-acesso-microservico','Ms-Users está fora do ar ou indisponível.');
+                this.eventMessageService.sendEvent(this.EXCHANGE,
+                    this.ROUTING_KEY,this.SOURCE,
+                    'falha-acesso-microservico',
+                    'Ms-Users está fora do ar ou indisponível.');
                 throw new NotFoundException('MS-Users is down or unavailable');
             } else {
                 throw new ConflictException('Login failed');

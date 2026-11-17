@@ -96,6 +96,7 @@ async function bootstrap() {
     customfavIcon: 'favicon.ico',
     customCss:
       `.swagger-ui .topbar {display: yes},
+      .swaggr-ui .tags-sorted alpha.
       .swagger-ui .info .title {color: #fb82f6;}`
   });
 

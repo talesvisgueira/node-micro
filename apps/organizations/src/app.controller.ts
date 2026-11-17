@@ -1,6 +1,9 @@
 import { Body, Controller, Get, HttpStatus, Post ,Res} from '@nestjs/common';
 import { AppService } from './app.service';
 import { Http2ServerResponse } from 'node:http2';
+import { IOrganization } from '@myorg/core/src/interfaces/organization';
+import { Organization } from './entities/organization.entity';
+
 
 @Controller()
 export class AppController {
@@ -9,6 +12,11 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Get("/all")
+  async getAll(): Promise<Organization[]> {
+    return await this.appService.getAll();
   }
 
   @Get("/health")

@@ -1,48 +1,133 @@
+<div class="login-wrapper">
+  <!-- Ambient background elements -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="pattern-grid" aria-hidden="true"></div>
 
-<form class="app-login-page" [formGroup]="loginForm"  >
-<div >
-    <div class="imgcontainer" >
-        <img class="avatar" src="../../../../../public/avatar.png" alt="Avatar"  >
-    </div>
-    <div class="container">
-        <label for="uname"><b>Nome do usuário</b></label>
-        <input type="text" formControlName="username" placeholder="Enter Username" name="uname"   required>
-        @if(loginForm.controls['username'].touched ) {
-            <div class="text-danger">
-                @if(loginForm.controls['username'].errors?.['required']) {
-                    <span > Campo 'NOME DO USUÁRIO' é obrigatório</span>
-                }
-                @if(loginForm.controls['username'].errors?.['minlength']) {
-                    <span > O campo deve possui no mínimo 05 caracteres</span>
-                }
+  <div class="login-card-container">
+    <div class="login-card shadow-lg">
+      <!-- Card Header -->
+      <div class="login-card-header text-center">
+        <div class="login-emblem mb-3">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28" aria-hidden="true">
+            <path d="M16 2L4 7V15C4 22 9.1 28.5 16 30.3C22.9 28.5 28 22 28 15V7L16 2Z" fill="#0f766e" stroke="#2dd4bf" stroke-width="1.5"/>
+            <path d="M11 16L14.5 19.5L21 13" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="system-badge">Portal de Autenticação Segura</span>
+        <h1 class="h3 fw-bold text-dark mt-2 mb-1">Acesso ao SEPPEx</h1>
+        <p class="text-muted small mb-0">
+          Informe suas credenciais ou certificado institucional para prosseguir.
+        </p>
+      </div>
+
+      <!-- Login Form -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form p-4">
+        <!-- Username input -->
+        <div class="mb-3">
+          <label for="usernameInput" class="form-label small fw-semibold text-secondary">
+            Nome de Usuário / E-mail
+          </label>
+          <div class="input-group">
+            <span class="input-group-text bg-light border-end-0 text-muted">
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </span>
+            <input
+              id="usernameInput"
+              type="text"
+              class="form-control border-start-0"
+              formControlName="username"
+              placeholder="seu.email@eb.mil.br"
+              autocomplete="username"
+              required
+            />
+          </div>
+          @if (loginForm.controls['username'].touched && loginForm.controls['username'].invalid) {
+            <div class="form-text text-danger small mt-1">
+              @if (loginForm.controls['username'].errors?.['required']) {
+                <span>O nome de usuário é obrigatório.</span>
+              }
+              @if (loginForm.controls['username'].errors?.['minlength']) {
+                <span>Mínimo de 5 caracteres.</span>
+              }
             </div>
+          }
+        </div>
+
+        <!-- Password input -->
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <label for="passwordInput" class="form-label small fw-semibold text-secondary mb-0">
+              Senha Institucional
+            </label>
+            <a href="#" class="small text-teal text-decoration-none">Esqueceu a senha?</a>
+          </div>
+          <div class="input-group">
+            <span class="input-group-text bg-light border-end-0 text-muted">
+              <i class="bi bi-lock" aria-hidden="true"></i>
+            </span>
+            <input
+              id="passwordInput"
+              type="password"
+              class="form-control border-start-0"
+              formControlName="password"
+              placeholder="••••••••"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+          @if (loginForm.controls['password'].touched && loginForm.controls['password'].invalid) {
+            <div class="form-text text-danger small mt-1">
+              @if (loginForm.controls['password'].errors?.['required']) {
+                <span>A senha é obrigatória.</span>
+              }
+              @if (loginForm.controls['password'].errors?.['minlength']) {
+                <span>A senha deve possuir no mínimo 8 caracteres.</span>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- Error notification -->
+        @if (!isLoginValid()) {
+          <div class="alert alert-danger py-2 px-3 small d-flex align-items-center gap-2 mb-3" role="alert">
+            <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
+            <span>Credenciais incorretas ou usuário não autorizado.</span>
+          </div>
         }
 
-        <label for="psw"><b>Senha</b></label>
-        <input type="password" formControlName="password" placeholder="Enter Password" name="psw"   required>
-        <div class="text-danger">
-            @if(loginForm.controls['username'].touched ) {
-                <div class="text-danger">
-                    @if(loginForm.controls['password'].errors?.['required']) {
-                        <span > Campo 'SENHA' é obrigatório</span>
-                    }
-                    @if(loginForm.controls['password'].errors?.['minlength']) {
-                        <span > O campo deve possui no mínimo 08 caracteres</span>
-                    }
-                </div>
+        <!-- Actions -->
+        <div class="d-grid gap-2 mb-3">
+          <button
+            type="submit"
+            class="btn btn-primary-custom py-2 rounded-3 fw-semibold d-flex align-items-center justify-content-center gap-2"
+            [disabled]="loginForm.invalid || isLoading()"
+          >
+            @if (isLoading()) {
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              <span>Autenticando...</span>
+            } @else {
+              <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+              <span>Entrar no Sistema</span>
             }
+          </button>
         </div>
 
-        <button type="submit" [disabled]="loginForm.invalid" (click)="onSubmit()" >Login</button>
-        <div class="text-danger" [hidden]="isLoginValid">  <span > Usuário ou senha inválido. </span> </div>
-        <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-
-        <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn" (click)="onCancel()" >Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
+        <div class="text-center">
+          <button type="button" class="btn btn-link text-muted small text-decoration-none" (click)="onCancel()">
+            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>
+            Voltar ao portal inicial
+          </button>
         </div>
+      </form>
+
+      <!-- Footer Info -->
+      <div class="login-card-footer px-4 py-3 bg-light border-top text-center">
+        <span class="small text-muted d-inline-flex align-items-center gap-1">
+          <i class="bi bi-shield-lock-fill text-teal" aria-hidden="true"></i>
+          Conexão Segura Criptografada TLS 1.3
+        </span>
+      </div>
     </div>
+  </div>
 </div>
-</form>

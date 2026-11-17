@@ -1,16 +1,110 @@
-<form action="action_page.php" method="post">
-  @if (showSplash) {
-    <div class="app-splash-screen"
-     [ngStyle]="{
-        left: windowWidth,
-        opacity: opacityChange,
-        transition: splashTransition
-    }">
-      <div class="app-splahs-screen-inner">
-        <div class="app-logo" > Sistema de Pagamento de Pessoal do Exército </div>
-        <div class="app-label"> SPPEx </div>
-        <div class="app-loader">  </div>
+<div
+  class="splash-wrapper"
+  [class.splash-exit]="isExiting()"
+  [style.transition-duration.s]="animationDuration()"
+  role="region"
+  aria-label="Tela de carregamento do sistema"
+>
+  <!-- Ambient background glow elements -->
+  <div class="glow-orb orb-primary" aria-hidden="true"></div>
+  <div class="glow-orb orb-secondary" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Skip button for convenience -->
+  <button
+    type="button"
+    class="skip-btn"
+    (click)="skipToAccess()"
+    aria-label="Pular carregamento da tela de abertura"
+  >
+    Pular introdução
+    <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+  </button>
+
+  <div class="splash-card">
+    <!-- Modern Emblem / Iconography -->
+    <div class="emblem-container">
+      <div class="emblem-ring-outer" aria-hidden="true"></div>
+      <div class="emblem-ring-pulse" aria-hidden="true"></div>
+      <div class="emblem-core">
+        <svg
+          class="emblem-svg"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M24 4L7 11V22C7 32.5 14.2 42.3 24 45C33.8 42.3 41 32.5 41 22V11L24 4Z"
+            fill="url(#emblem-grad)"
+            stroke="#14b8a6"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M17 24L22 29L31 19"
+            stroke="#ffffff"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <defs>
+            <linearGradient id="emblem-grad" x1="7" y1="4" x2="41" y2="45" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0f766e" />
+              <stop offset="1" stop-color="#042f2e" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
     </div>
-  }
-</form>
+
+    <!-- Title and Brand -->
+    <div class="brand-section">
+      <div class="badge-status">
+        <span class="status-dot"></span>
+        <span class="badge-text">Ambiente Seguro de Auditoria</span>
+      </div>
+      <h1 class="brand-title">SEPPEx</h1>
+      <p class="brand-subtitle">
+        Sistema de Exame de Pagamento de Pessoal
+      </p>
+      <span class="institutional-tag">Exército Brasileiro • OpenALM</span>
+    </div>
+
+    <!-- Loading Bar and Status Text -->
+    <div class="progress-section">
+      <div class="progress-header">
+        <span class="step-label">{{ currentStepText() }}</span>
+        <span class="percentage-label">{{ progress() }}%</span>
+      </div>
+
+      <div
+        class="progress-track"
+        role="progressbar"
+        [attr.aria-valuenow]="progress()"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        <div class="progress-fill" [style.width.%]="progress()">
+          <span class="progress-glow"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Security Information -->
+    <div class="splash-footer">
+      <div class="security-chip">
+        <i class="bi bi-shield-check" aria-hidden="true"></i>
+        <span>TLS 1.3 / E2E</span>
+      </div>
+      <div class="security-chip">
+        <i class="bi bi-cpu" aria-hidden="true"></i>
+        <span>{{ systemVersion() }}</span>
+      </div>
+      <div class="security-chip">
+        <i class="bi bi-patch-check" aria-hidden="true"></i>
+        <span>Auditoria Ativa</span>
+      </div>
+    </div>
+  </div>
+</div>

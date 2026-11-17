@@ -1,6 +1,104 @@
-.bebas-neue-regular {
-    font-size: 20px;
-    font-family: "Bebas Neue", serif;
-    font-weight: 600;
-    font-style: bold;
+.gov-topbar {
+  background: #0b1329;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 0.75rem;
+  padding: 6px 0;
+  position: relative;
+  z-index: 1030;
+}
+
+.gov-flag-stripe {
+  display: flex;
+  height: 12px;
+  width: 18px;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+  .stripe-green {
+    flex: 2;
+    background: #009c3b;
   }
+  .stripe-yellow {
+    flex: 1.5;
+    background: #ffdf00;
+  }
+  .stripe-blue {
+    flex: 1.5;
+    background: #002776;
+  }
+}
+
+.gov-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.02em;
+}
+
+.gov-title {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.gov-sep {
+  color: #475569;
+}
+
+.gov-subtitle {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.env-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.env-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 6px #34d399;
+}
+
+.text-teal {
+  color: #14b8a6;
+}
+
+.text-muted-gov {
+  color: #64748b;
+  font-size: 0.72rem;
+}
+
+.user-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2px 10px;
+  border-radius: 9999px;
+  color: #cbd5e1;
+  font-weight: 500;
+  font-size: 0.72rem;
+
+  i {
+    color: #14b8a6;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .gov-subtitle {
+    display: none;
+  }
+}

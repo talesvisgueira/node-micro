@@ -5,20 +5,23 @@ import { Column,
         PrimaryColumn,
         UpdateDateColumn } from "typeorm";
 
-@Entity('tb_person')
-export class Person {
+@Entity('tb_organization')
+export class Organization {
 
     @PrimaryColumn()
     @IsNotEmpty()
     id!: string;
 
-    @Column({ length: 14 })
+    @Column()
     code!: string;
 
-    @Column({ length: 100 })
-    name!: string;
+    @Column( )
+    sigla!: string;
 
-    @Column({ length: 100 })
+    @Column( )
+    nome!: string;
+
+    @Column( )
     email!: string;
 
     @CreateDateColumn()

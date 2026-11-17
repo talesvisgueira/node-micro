@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../../services/LocalStorageService';
 
 @Component({
   selector: 'app-header',
@@ -7,23 +8,28 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
+export class HeaderComponent implements OnInit {
+  private readonly router = inject(Router);
+  private readonly localStorageService = inject(LocalStorageService);
 
+  readonly isLoginValid = signal(false);
+  readonly username = signal('');
 
-export class HeaderComponent {
-  protected isLoginValid = false;
-   protected username = signal('');
-
-     constructor(public router:Router) {}
-
-     public definirUsuario() {
-    const storedUsername = localStorage.getItem('OpenSwesUserName');
-    if (storedUsername) {
-      this.isLoginValid = true;
-      this.username.set(storedUsername);
-    } else this.router.navigateByUrl('access');
+  ngOnInit(): void {
+    this.definirUsuario();
   }
 
-  ngOnInit() {
-    this.definirUsuario();
+  definirUsuario(): void {
+    const storedUsername = this.localStorageService.obterUserName();
+    if (storedUsername && storedUsername.trim().length > 0) {
+      this.isLoginValid.set(true);
+      this.username.set(storedUsername);
+    } else {
+      this.isLoginValid.set(false);
+      this.username.set('');
+      if (this.router.url.startsWith('/home')) {
+        this.router.navigateByUrl('access');
+      }
+    }
   }
 }
